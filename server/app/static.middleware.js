@@ -6,8 +6,8 @@ module.exports = router;
 
 const rootPath = path.join(__dirname, '..', '..');
 const publicPath = path.join(rootPath, 'public');
-// const nodeModulesPath = path.join(rootPath, 'node_modules');
+const nodeModulesPath = path.join(rootPath, 'node_modules');
 
+router.use(express.static(rootPath));
 router.use(express.static(publicPath));
-// router.use(express.static(rootPath));
-// router.use(express.static(nodeModulesPath));
+router.use(express.static(nodeModulesPath));

@@ -1,7 +1,6 @@
 ~~ back-end todos ~~
 
 # error-handling
-# serve bin
 
 
 
@@ -9,6 +8,8 @@
 ~~ front-end todos ~~
 
 # Home Page ... in general
+# Links in the navbar are throwing errors
+# Navbar Logo clicking and image cutoff
 
 
 
@@ -16,3 +17,5 @@
 ~~ monotron ~~
 
 # check Monotron-UI.js for TODOs
+# as it is now, the monotron component needs the page to be refreshed for the UI to be displayed
+# disable the audio context when the page isn't loaded

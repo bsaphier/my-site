@@ -1,47 +1,21 @@
-import React from 'react';
-import { Col, Row, Grid } from 'react-bootstrap';
-
-import Knob from '../components/Knob.js';
-import Switch from '../components/Switch.js';
-import Keyboard from '../components/Keyboard.js';
+import React, { Component } from 'react';
 
 /* ---> mount the UI controls <--- */
-import '../lib/monotron/Monotron-UI';
+import monUI from '../lib/monotron/Monotron-UI.js';
 
-const Monotron = () => (
-  <Grid className="text-center" fluid={true}>
+/* ---> react components <--- */
+import Monotron from '../components/Monotron.js';
 
-    <h3>MONOTRON</h3>
 
-    <Row>
-      <Col xs={4}>
-        <Switch label="LFO Dest." choices="Pitch,Cutoff" />
-      </Col>
-
-      <Col xs={3}>
-        <Knob label="VCO" />
-      </Col>
-
-      <Col xs={2}>
-        <Knob label="LFO Rate" />
-        <Knob label="LFO Int" />
-      </Col>
-
-      <Col xs={3}>
-        <Knob label="VCF Cutoff" />
-        <Knob label="VCF Peak" />
-      </Col>
-    </Row>
-
-    <Col xs={4}>
-      <canvas data-nx="typewriter"></canvas>
-    </Col>
-
-    <Col xs={4}>
-      <Keyboard />
-    </Col>
-
-  </Grid>
-);
-
-export default Monotron;
+export default class MonotronContainer extends Component {
+  componentDidMount() {
+    return monUI; //do this in a better way
+  }
+  render () {
+    return (
+      <div className="container-fluid">
+        <Monotron />
+      </div>
+    );
+  }
+}
