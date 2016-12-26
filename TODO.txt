@@ -1,4 +1,10 @@
 ~~ back-end todos ~~
-- error-handling
+
+# error-handling
+# serve bin
+
+
 
 ~~ front-end todos ~~
+
+# Home Page ... in general
