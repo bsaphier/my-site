@@ -5,6 +5,14 @@
 
 
 
+
 ~~ front-end todos ~~
 
 # Home Page ... in general
+
+
+
+
+~~ monotron ~~
+
+# check Monotron-UI.js for TODOs

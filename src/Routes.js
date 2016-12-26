@@ -8,13 +8,13 @@ import {
 
 import Main from './components/Main';
 import Home from './components/Home';
-import Monotron from './components/Monotron';
+import MonotronContainer from './components/MonotronContainer';
 
 const Routes = () => (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
       <IndexRoute component={Home} />
-      {/* <Route path="synth" component={Monotron} /> */}
+      <Route path="synth" component={MonotronContainer} />
       <Route path="*" component={Home} />
     </Route>
   </Router>
