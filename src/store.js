@@ -1,9 +1,14 @@
 import createLogger from 'redux-logger';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 
-import reducers from './reducers';
+import rootReducer from './reducers';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default createStore(
-  reducers,
-  applyMiddleware(createLogger())
+  rootReducer, composeEnhancers(
+    applyMiddleware(
+      createLogger({collapsed: true})
+    )
+  )
 );
