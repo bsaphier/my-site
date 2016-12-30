@@ -1,26 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { Row, Col, Grid } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
-const Home = () => (
-  <Grid>
+import ParticlesWrapper from './ParticlesWrapper';
 
-    <div className="container-fluid animated fadeInDownBig">
-      <div className="text-center">
-        <Link to="/synth" className="btn btn-custom btn-lg wavy--shit" type="button">Ben Saphier</Link>
-      </div>
+const Home = ({ style, params }) => {
+  return (
+    <div>
+      <ParticlesWrapper
+        style={style}
+        params={params}
+      />
+      <span>
+        <h1>Home</h1>
+      </span>
     </div>
+  );
+};
 
-    <Row className="animated fadeIn">
-      <Col xs={12} lg={4}>
-        <p className="wavy--shit">webpack is bundling everything as expected</p>
-      </Col>
-      <Col xs={6} lg={4} lgOffset={4}>
-        <p className="shadow">don't stop the funk</p>
-      </Col>
-    </Row>
+const mapState = state => {
+  return state.particlesReducer;
+};
 
-  </Grid>
-);
-
-export default Home;
+export default connect(
+  mapState
+)(Home);

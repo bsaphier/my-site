@@ -1,3 +1,23 @@
 /**
  * Basic typography style for copy text
  */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+  text-align: center;
+  letter-spacing: -.062em;
+  font-family: sans-serif;
+  margin: auto;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu-item {
+  font-size: 1.15rem;
+  font-family: sans-serif;
+}

@@ -1,21 +1,25 @@
-~~ back-end todos ~~
 
-# error-handling
-
-
-
-
-~~ front-end todos ~~
+~~~~~~~~~~~~~ front-end todos ~~~~~~~~~~~~~
 
 # Home Page ... in general
-# Links in the navbar are throwing errors
-# Navbar Logo clicking and image cutoff
 
 
 
 
-~~ monotron ~~
+~~~~~~~~~~~~~~~~~ monotron ~~~~~~~~~~~~~~~~~
+
+# as it is now, the monotron component needs the page to be refreshed for the UI to be displayed
+  # load the contstructor and the ui in a better order/place
+
+# disable the audio context when the page isn't loaded
+  # IDEA: on componentDidUnmount disconnect montron AudioNode from _mastergain
 
 # check Monotron-UI.js for TODOs
-# as it is now, the monotron component needs the page to be refreshed for the UI to be displayed
-# disable the audio context when the page isn't loaded
+
+
+
+
+
+~~~~~~~~~~~~~~ back-end todos ~~~~~~~~~~~~~~
+
+# error-handling

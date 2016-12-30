@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 /* ---> mount the UI controls <--- */
-import monUI from '../lib/monotron/Monotron-UI.js';
+import monUI from '../lib/monotron/Monotron-UI';
 
 /* ---> react components <--- */
-import Monotron from '../components/Monotron.js';
+import Monotron from '../components/monotron/Monotron';
 
 
 export default class MonotronContainer extends Component {

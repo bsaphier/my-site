@@ -1,8 +1,8 @@
 const initialTempState = {
-  tempPropObj: {},
-  tempPropArr: [],
-  tempPropBool: true,
-  tempPropNum: 0
+  IHaveNotMadeAnyStateObj: {},
+  IHaveNotMadeAnyStateArr: [],
+  IHaveNotMadeAnyStateBool: true,
+  IHaveNotMadeAnyStateNum: 0
 };
 
 export default function(state = initialTempState, action) {

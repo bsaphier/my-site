@@ -1,11 +1,13 @@
 import React from 'react';
 
-import Navbar from './Navbar';
+import Sidebar from './Sidebar';
 
 const Main = ({ children }) => (
-  <div>
-    <Navbar />
-    { children }
+  <div id="outer-container">
+    <Sidebar />
+    <main id="page-wrap">
+      { children }
+    </main>
   </div>
 );
 

@@ -25,11 +25,14 @@
     "express": "^4.14.0",
     "nexusui": "^1.0.8",
     "react": "^15.4.1",
-    "react-bootstrap": "^0.30.7",
+    "react-burger-menu": "^1.10.10",
     "react-dom": "^15.4.1",
+    "react-particles-js": "^1.4.0",
     "react-redux": "^5.0.1",
     "react-router": "^3.0.0",
     "redux": "^3.6.0",
-    "redux-logger": "^2.7.4"
+    "redux-burger-menu": "^0.1.0",
+    "redux-logger": "^2.7.4",
+    "redux-thunk": "^2.1.0"
   }
 }
