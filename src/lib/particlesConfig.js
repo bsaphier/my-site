@@ -7,20 +7,20 @@ export const style = {
 export const params = {
   particles: {
     number: {
-      value: 89,
+      value: 25,
       density: {
-        enable: false,
-        value_area: 710.2328774690454
+        enable: true,
+        value_area: 750
       }
     },
     color: {
-      value: '#ffffff'
+      value: '#444fff'
     },
     shape: {
       type: 'polygon',
       stroke: {
-        width: 3,
-        color: '#000000'
+        width: 6,
+        color: '#110111'
       },
       polygon: {
         nb_sides: 6
@@ -33,19 +33,19 @@ export const params = {
     },
     opacity: {
       value: 0.5,
-      random: true,
+      random: false,
       anim: {
-        enable: true,
+        enable: false,
         speed: 0.3,
-        opacity_min: 0.1,
+        opacity_min: 0.5,
         sync: false
       }
     },
     size: {
-      value: 100,
+      value: 34,
       random: true,
       anim: {
-        enable: true,
+        enable: false,
         speed: 3,
         size_min: 0.1,
         sync: false
@@ -53,18 +53,18 @@ export const params = {
     },
     line_linked: {
       enable: false,
-      distance: 352.750653390415,
-      color: '#cccccc',
-      opacity: 0,
+      distance: 89,
+      color: '#cccfff',
+      opacity: 1,
       width: 0.6
     },
     move: {
       enable: true,
-      speed: 0,
-      direction: 'none',
-      random: false,
-      straight: false,
-      out_mode: 'bounce',
+      speed: 0.38,
+      direction: 'top',
+      random: true,
+      straight: true,
+      out_mode: '',
       bounce: false,
       attract: {
         enable: false,
@@ -94,14 +94,14 @@ export const params = {
         }
       },
       bubble: {
-        distance: 300,
-        size: 4.060386061506726,
-        duration: 8.12077212301345,
-        opacity: 0.07308694910712106,
-        speed: 3
+        distance: 154,
+        size: 5,
+        duration: 8,
+        opacity: 0.3,
+        speed: 6
       },
       repulse: {
-        distance: 146.17389821424212,
+        distance: 146,
         duration: 0.4
       },
       push: {

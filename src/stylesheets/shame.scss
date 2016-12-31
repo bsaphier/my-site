@@ -22,21 +22,21 @@
 }
 
 .shadow {
-  color: $other-color;
-   text-shadow: 0.3px 0.3px 0px $rgba-primary-4,
+  color: $menu-text;
+   text-shadow: 0.3px 0.3px 0px $rgba-primary-0,
                 0.6px 0.6px 0px $rgba-primary-3,
-                0.9px 0.9px 0px $rgba-primary-0;
+                0.9px 0.9px 0px $rgba-primary-4;
    transition: all 0.05s ease-out;
    -webkit-animation: hueShift 26s infinite linear;
    &:hover {
       position: relative;
       top: -1.8px;
       left: -1.8px;
-      text-shadow: 0.3px 0.3px 0px $rgba-primary-4,
-                   0.6px 0.6px 0px $rgba-primary-3,
-                   0.9px 0.9px 0px $rgba-primary-3,
-                   1.2px 1.2px 0px $rgba-primary-0,
-                   1.5px 1.5px 0px $rgba-primary-2,
-                   1.8px 1.8px 0px $rgba-primary-1;
+      text-shadow: 0.3px 0.3px 0px $rgba-primary-1,
+                   0.6px 0.6px 0px $rgba-primary-2,
+                   0.9px 0.9px 0px $rgba-primary-0,
+                   1.2px 1.2px 0px $rgba-primary-3,
+                   1.5px 1.5px 0px $rgba-primary-3,
+                   1.8px 1.8px 0px $rgba-primary-4;
    }
 }

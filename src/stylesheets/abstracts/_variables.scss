@@ -17,5 +17,15 @@ $rgba-primary-2: rgba( 85, 14, 124, 0.9);
 $rgba-primary-3: rgba( 47,  4, 70, 1);
 $rgba-primary-4: rgba( 28,  2, 41, 1);
 
+$menu-transp: rgba(13, 13, 13, 0.8);
+$menu-dark: rgba(42, 42, 42, 1);
+$menu-text: #444FFF;
+
+
 // used in wavy--shit
-$bg-gradient: -webkit-linear-gradient(162deg, $lighter-color, $color-primary-1, $other-color);
+$bg-gradient: linear-gradient(162deg, $lighter-color, $color-primary-1, $other-color);
+
+
+$menu-gradient: linear-gradient(13deg, $menu-transp, $menu-dark);
+
+$background-grad: linear-gradient(to left top, #FFF, #EEE, 1%, #222);

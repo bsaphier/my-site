@@ -9,9 +9,9 @@ const Sidebar = ({ menuItems }) => {
   const fillMenu = menuItems.map((item, idx) => {
     let key = idx;
     return (
-      <div key={ key }>
+      <div key={ key } className="menu-item shadow">
         <Link to={ item.link }>
-          <span className="menu-item">{ item.title }</span>
+          <span>{ item.title }</span>
         </Link>
       </div>
     );

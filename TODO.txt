@@ -6,6 +6,17 @@
 
 
 
+
+
+~~~~~~~~~~~~~~ back-end todos ~~~~~~~~~~~~~~
+
+# error-handling
+
+
+
+
+
+
 ~~~~~~~~~~~~~~~~~ monotron ~~~~~~~~~~~~~~~~~
 
 # as it is now, the monotron component needs the page to be refreshed for the UI to be displayed
@@ -15,11 +26,3 @@
   # IDEA: on componentDidUnmount disconnect montron AudioNode from _mastergain
 
 # check Monotron-UI.js for TODOs
-
-
-
-
-
-~~~~~~~~~~~~~~ back-end todos ~~~~~~~~~~~~~~
-
-# error-handling
