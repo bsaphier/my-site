@@ -1,32 +1,3 @@
-const initialState = {
-  menuItems: [
-    {
-      title: 'Home',
-      link: '/'
-    },
-    {
-      title: 'Filler',
-      link: '/filler'
-    }
-  ]
-};
+import menuState from '../lib/menuItems';
 
-
-/* ~~~~~~~~ actions ~~~~~~~~ */
-
-
-/* ~~~~~~~~ reducer ~~~~~~~~ */
-export default function(state = initialState, action) {
-
-  const newState = Object.assign({}, state);
-
-  switch (action.type) {
-
-    default:
-      return newState;
-
-  }
-}
-
-
-/* ~~~~ action creators ~~~~ */
+export default (state = menuState) => (state);

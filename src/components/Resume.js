@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Filler = () => {
+const Resume = () => {
   return (
     <div>
-      <h1>Filler</h1>
+      <h1>Resume</h1>
     </div>
   );
 };
 
-export default Filler;
+export default Resume;

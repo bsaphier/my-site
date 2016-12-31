@@ -5,12 +5,13 @@ const initialTempState = {
   IHaveNotMadeAnyStateNum: 0
 };
 
-export default function(state = initialTempState, action) {
-
+export default (state = initialTempState, action) => {
   const newState = Object.assign({}, state);
 
   switch (action.type) {
+
     default:
       return newState;
+
   }
-}
+};

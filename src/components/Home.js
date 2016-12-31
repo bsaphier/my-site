@@ -1,15 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-import ParticlesWrapper from './ParticlesWrapper';
+import ParticlesContainer from '../containers/ParticlesContainer';
 
-const Home = ({ style, params }) => {
+const Home = () => {
   return (
     <div>
-      <ParticlesWrapper
-        style={style}
-        params={params}
-      />
+      <ParticlesContainer />
       <span>
         <h1>Home</h1>
       </span>
@@ -17,10 +13,4 @@ const Home = ({ style, params }) => {
   );
 };
 
-const mapState = state => {
-  return state.particlesReducer;
-};
-
-export default connect(
-  mapState
-)(Home);
+export default Home;
