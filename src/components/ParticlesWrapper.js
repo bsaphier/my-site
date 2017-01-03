@@ -2,12 +2,11 @@ import React from 'react';
 import Particles from 'react-particles-js';
 
 
-const ParticlesWrapper = ({ style, params }) => {
+const ParticlesWrapper = ({ particles }) => {
   return (
-    <Particles
-      style={ style }
-      params={ params }
-    />
+    <div id="particles-js">
+      <Particles params={ particles } />
+    </div>
   );
 };
 

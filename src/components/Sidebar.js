@@ -21,7 +21,6 @@ const Sidebar = ({ menuItems }) => {
     <div>
       <Menu
         id="sidebar"
-        width={ 200 }
         pageWrapId={'page-wrap'}
         outerContainerId={'outer-container'}
       >

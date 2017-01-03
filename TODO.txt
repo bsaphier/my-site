@@ -11,7 +11,7 @@
 ~~~~~~~~~~~~~~ back-end todos ~~~~~~~~~~~~~~
 
 # error-handling
-
+  # make a 404 response for paths that don't match anything
 
 
 

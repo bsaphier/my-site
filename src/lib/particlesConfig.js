@@ -1,10 +1,4 @@
-export const style = {
-  top: 0,
-  left: 0,
-  position: 'fixed'
-};
-
-export const params = {
+export default {
   particles: {
     number: {
       value: 25,
