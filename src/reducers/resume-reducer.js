@@ -1,11 +1,12 @@
 const initialState = {
-  work: { text: 'test' },
-  basics: { text: 'test' },
-  skills: { text: 'test' },
-  education: { text: 'test' },
-  languages: { text: 'test' },
-  references: { text: 'test' },
-  publications: { text: 'test' }
+  work: { text: 'work' },
+  basics: {
+    name: 'Benjamin Saphier',
+    text: 'about'
+  },
+  skills: { text: 'skills' },
+  education: { text: 'education' },
+  portfolio: { text: 'portfolio' }
 };
 
 export default (state = initialState) => (state);

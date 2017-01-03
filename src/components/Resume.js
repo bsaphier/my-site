@@ -1,19 +1,28 @@
 import React from 'react';
 
+import Header from './Header';
+import Banner from './Banner';
+import ChangeSection from './ChangeSection';
+import NavBarContainer from '../containers/NavBarContainer';
 import ResumeComponents from './resumeComponents';
 
 const Resume = ({ resume }) => {
   return (
     <div>
-      <h1 className="top center shadow">Resume</h1>
+      <Header>
+        <NavBarContainer />
+        <Banner
+          basics={ resume.basics }
+        />
+        <ChangeSection link="about" />
+      </Header>
       <ResumeComponents
         work={ resume.work }
         basics={ resume.basics }
         skills={ resume.skills }
         education={ resume.education }
-        languages={ resume.languages }
         references={ resume.references }
-        portfolio={ resume.publications }
+        portfolio={ resume.portfolio }
       />
     </div>
   );

@@ -3,12 +3,12 @@ import React from 'react';
 const Footer = ({ content }) => {
   return (
     <footer>
-      <div className="row">
-        <div className="columns">
-          <ul>
-            <li><p className="wavy--shit">{content.text}</p></li>
-          </ul>
-        </div>
+      <div id="go-top">
+        <a className="smoothscroll" title="Back to Top" href="/resume">
+          <h2 className="shadow">
+            Footer
+          </h2>
+        </a>
       </div>
     </footer>
   );
