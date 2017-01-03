@@ -8,7 +8,8 @@ import {
 
 import Main from './components/Main';
 import Home from './components/Home';
-import Resume from './components/Resume';
+import SectionWrapper from './components/SectionWrapper';
+import ResumeContainer from './containers/ResumeContainer';
 
 // import MonotronContainer from './containers/MonotronContainer';
 
@@ -17,7 +18,9 @@ const Routes = () => (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
       <IndexRoute component={Home} />
-      <Route path="/resume" component={Resume} />
+      <Route path="/resume" component={SectionWrapper}>
+        <IndexRoute component={ResumeContainer} />
+      </Route>
       <Route path="*" component={Home} />
       {/* <Route path="/synth" component={MonotronContainer} /> */}
     </Route>

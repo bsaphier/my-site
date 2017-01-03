@@ -1,11 +1,11 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
+  z-index: 9991 !important;
   position: fixed;
   width: 34px;
   height: 21px;
   left: 3vh;
   top: 3vh;
-  z-index: 999 !important;
 }
 
 /* Color/shape of burger icon bars */
@@ -34,7 +34,6 @@
   padding: 2.5em 1.5em 0;
 }
 
-
 /* Wrapper for item list */
 .bm-item-list {
   color: $menu-dark;
@@ -59,4 +58,8 @@
   border-color: $menu-text;
   padding: 13px 21px;
   margin: 8px auto;
+}
+
+#sidebar {
+  z-index: 9999 !important;
 }
