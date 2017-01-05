@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import monUI from '../lib/monotron/Monotron-UI';
 
 /* ---> react components <--- */
-import Monotron from '../components/monotron/Monotron';
+import Monotron from '../components/monotronComponents/Monotron';
 
 
 class MonotronContainer extends Component {
