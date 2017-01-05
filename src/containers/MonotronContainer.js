@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 /* ---> mount the UI controls <--- */
 import monUI from '../lib/monotron/Monotron-UI';
@@ -7,8 +8,9 @@ import monUI from '../lib/monotron/Monotron-UI';
 import Monotron from '../components/monotron/Monotron';
 
 
-export default class MonotronContainer extends Component {
+class MonotronContainer extends Component {
   componentDidMount() {
+    // monUI is all the synth logic. i.e. the M & C of MVC
     return monUI; //do this in a better way
   }
   render () {
@@ -19,3 +21,5 @@ export default class MonotronContainer extends Component {
     );
   }
 }
+
+export default connect()(MonotronContainer);
