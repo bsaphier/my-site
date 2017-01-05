@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Col, Row, Well, Grid } from 'react-bootstrap';
 
 import Knob from './Knob';
 import Switch from './Switch';
