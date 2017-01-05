@@ -1,18 +1,20 @@
 import React from 'react';
 
-import Header from './Header';
+import Header from '../containers/Header';
+
 import Banner from './Banner';
+import Navbar from './navbarComponents';
 import ChangeSection from './ChangeSection';
-import NavBarContainer from '../containers/NavBarContainer';
 import ResumeComponents from './resumeComponents';
+
 
 const Resume = ({ resume }) => {
   return (
     <div>
-      <Header>
-        <NavBarContainer />
+      <Header id={ 'resume-home' }>
+        <Navbar navbar={ resume.navbar } />
         <Banner
-          basics={ resume.basics }
+          title={ resume.basics }
         />
         <ChangeSection link="about" />
       </Header>

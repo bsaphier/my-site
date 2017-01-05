@@ -2,22 +2,24 @@ import React from 'react';
 
 import NavItem from './navItem';
 
-const NavBar = ({ navbar }) => {
+const Navbar = ({ navbar }) => {
   return (
     <nav id="nav-wrap" className="opaque">
       <ul id="nav" className="nav">
         {Object.keys(navbar).map((navLink, idx) => {
           const navItemTitle = navbar[navLink];
-          return (
-            <NavItem
+          return (navItemTitle === navbar.root) ?
+            null :
+            (<NavItem
               link={navLink}
+              name={navItemTitle}
               key={`nav${idx * 1}`}
-              name={navItemTitle} />
-          );
+              rootPath={navbar.root}
+            />);
         })}
       </ul>
     </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;

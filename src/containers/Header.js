@@ -36,7 +36,7 @@ class Header extends Component {
     };
 
     return (
-      <header id="resume-home" style={style}>
+      <header id={this.props.id} style={style}>
         { this.props.children }
       </header>
     );

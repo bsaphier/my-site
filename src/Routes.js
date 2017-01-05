@@ -7,7 +7,7 @@ import {
 } from 'react-router';
 
 import Main from './components/Main';
-import Home from './components/Home';
+import HomePage from './containers/HomePageContainer';
 import SectionWrapper from './components/SectionWrapper';
 import ResumeContainer from './containers/ResumeContainer';
 
@@ -17,11 +17,11 @@ import ResumeContainer from './containers/ResumeContainer';
 const Routes = () => (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
-      <IndexRoute component={Home} />
+      <IndexRoute component={HomePage} />
       <Route path="/resume" component={SectionWrapper}>
         <IndexRoute component={ResumeContainer} />
       </Route>
-      <Route path="*" component={Home} />
+      <Route path="*" component={HomePage} />
       {/* <Route path="/synth" component={MonotronContainer} /> */}
     </Route>
   </Router>

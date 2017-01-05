@@ -1,10 +1,10 @@
 export default {
   particles: {
     number: {
-      value: 25,
+      value: 0.62,
       density: {
         enable: true,
-        value_area: 750
+        value_area: 90
       }
     },
     color: {
@@ -13,52 +13,47 @@ export default {
     shape: {
       type: 'polygon',
       stroke: {
-        width: 6,
-        color: '#110111'
+        width: 5,
+        color: 'transparent'
       },
       polygon: {
         nb_sides: 6
       },
-      image: {
-        src: '',
-        width: 100,
-        height: 100
-      }
     },
     opacity: {
-      value: 0.6,
-      random: false,
+      value: 0.62,
+      random: true,
       anim: {
         enable: false,
-        speed: 0.3,
-        opacity_min: 0.5,
+        speed: 0.25,
+        opacity_min: 0.38,
         sync: false
       }
     },
     size: {
-      value: 34,
+      value: 200,
       random: true,
       anim: {
-        enable: false,
-        speed: 3,
-        size_min: 0.1,
-        sync: false
+        enable: true,
+        speed: 0.38,
+        size_min: 160,
+        sync: true
       }
     },
     line_linked: {
       enable: false,
-      distance: 89,
-      color: '#cccfff',
+      distance: 420,
+      color: '#444eee',
       opacity: 1,
-      width: 0.6
+      width: 1
     },
     move: {
       enable: true,
       speed: 0.38,
-      direction: 'top',
+      direction: 'top-left',
       random: true,
       straight: true,
-      out_mode: '',
+      out_mode: 'out',
       bounce: false,
       attract: {
         enable: false,

@@ -7,6 +7,10 @@ export default {
     {
       title: 'Resume',
       link: '/resume'
+    },
+    {
+      title: 'Monotron',
+      link: '/monotron'
     }
   ]
 };

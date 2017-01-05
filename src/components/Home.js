@@ -1,11 +1,17 @@
 import React from 'react';
 
+import Banner from './Banner';
+import Navbar from './navbarComponents';
+import Header from '../containers/Header';
 import ParticlesContainer from '../containers/ParticlesContainer';
 
-const Home = () => {
+const Home = ({ homePage }) => {
   return (
     <div>
-      <h1 className="top center shadow">Home</h1>
+      <Header id={ 'home-page' }>
+        <Navbar navbar={ homePage.navbar } />
+        <Banner title={ homePage.landingPage } />
+      </Header>
       <ParticlesContainer />
     </div>
   );
