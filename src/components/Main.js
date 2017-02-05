@@ -1,10 +1,10 @@
 import React from 'react';
 
-import SidebarContainer from '../containers/SidebarContainer';
+// import SidebarContainer from '../containers/SidebarContainer';
 
 const Main = ({ children }) => (
   <div id="outer-container">
-    <SidebarContainer />
+    {/* <SidebarContainer /> */}
     <main id="page-wrap">
       { children }
     </main>
