@@ -25,7 +25,6 @@
     "webpack": "^1.14.0"
   },
   "dependencies": {
-    "nexusui": "^1.0.8",
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.1",
     "react-burger-menu": "^1.10.10",
