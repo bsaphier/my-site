@@ -18,7 +18,7 @@ const Routes = () => (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
       {/* <IndexRoute component={HomePageContainer} /> */}
-      {/* <IndexRoute component={SectionWrapper} /> */}
+      <IndexRoute component={SectionWrapper} />
       <Route path="/resume" component={SectionWrapper}>
         <IndexRoute component={ResumeContainer} />
       </Route>

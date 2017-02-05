@@ -24765,6 +24765,7 @@
 	    _react2.default.createElement(
 	      _reactRouter.Route,
 	      { path: '/', component: _Main2.default },
+	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _SectionWrapper2.default }),
 	      _react2.default.createElement(
 	        _reactRouter.Route,
 	        { path: '/resume', component: _SectionWrapper2.default },
