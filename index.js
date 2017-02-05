@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import store from './store';
-import Routes from './Routes';
+import store from './src/store';
+import Routes from './src/Routes';
 
-require('./stylesheets/main.scss');
+require('./src/stylesheets/main.scss');
 
 ReactDOM.render(
   <Provider store={store}>
