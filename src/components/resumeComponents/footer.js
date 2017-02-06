@@ -4,7 +4,7 @@ const Footer = ({ content }) => {
   return (
     <footer>
       <div id="go-top">
-        <a className="smoothscroll" title="Back to Top" href="/resume">
+        <a className="smoothscroll" title="Back to Top" href="#resume">
           <h2 className="shadow">
             Footer
           </h2>

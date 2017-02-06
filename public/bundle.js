@@ -24761,17 +24761,15 @@
 	var Routes = function Routes() {
 	  return _react2.default.createElement(
 	    _reactRouter.Router,
-	    { history: _reactRouter.browserHistory },
+	    { history: _reactRouter.hashHistory },
 	    _react2.default.createElement(
 	      _reactRouter.Route,
 	      { path: '/', component: _Main2.default },
-	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _SectionWrapper2.default }),
 	      _react2.default.createElement(
 	        _reactRouter.Route,
-	        { path: '/resume', component: _SectionWrapper2.default },
+	        { path: '*', component: _SectionWrapper2.default },
 	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _ResumeContainer2.default })
-	      ),
-	      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _SectionWrapper2.default })
+	      )
 	    )
 	  );
 	};
@@ -32462,7 +32460,7 @@
 	      { id: "go-top" },
 	      _react2.default.createElement(
 	        "a",
-	        { className: "smoothscroll", title: "Back to Top", href: "/resume" },
+	        { className: "smoothscroll", title: "Back to Top", href: "#resume" },
 	        _react2.default.createElement(
 	          "h2",
 	          { className: "shadow" },
@@ -32535,7 +32533,7 @@
 	    { id: "portfolio" },
 	    _react2.default.createElement(
 	      "a",
-	      { className: "smoothscroll", href: "/resume" },
+	      { className: "smoothscroll", href: "#resume" },
 	      _react2.default.createElement(
 	        "h1",
 	        { className: "center shadow" },
