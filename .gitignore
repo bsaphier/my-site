@@ -2,4 +2,9 @@
 
 node_modules
 
+src
+.profile
+server
+package.json
+webpack.config.js
 TODO.txt
