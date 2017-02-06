@@ -66,7 +66,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(310);
+	__webpack_require__(309);
 	
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRedux.Provider,
@@ -24740,23 +24740,15 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Main = __webpack_require__(281);
-	
-	var _Main2 = _interopRequireDefault(_Main);
-	
-	var _SectionWrapper = __webpack_require__(282);
+	var _SectionWrapper = __webpack_require__(281);
 	
 	var _SectionWrapper2 = _interopRequireDefault(_SectionWrapper);
 	
-	var _ResumeContainer = __webpack_require__(296);
+	var _ResumeContainer = __webpack_require__(295);
 	
 	var _ResumeContainer2 = _interopRequireDefault(_ResumeContainer);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// import HomePageContainer from './containers/HomePageContainer';
-	// import MonotronContainer from './containers/MonotronContainer';
-	
 	
 	var Routes = function Routes() {
 	  return _react2.default.createElement(
@@ -29750,39 +29742,6 @@
 /* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// import SidebarContainer from '../containers/SidebarContainer';
-	
-	var Main = function Main(_ref) {
-	  var children = _ref.children;
-	  return _react2.default.createElement(
-	    "div",
-	    { id: "outer-container" },
-	    _react2.default.createElement(
-	      "main",
-	      { id: "page-wrap" },
-	      children
-	    )
-	  );
-	};
-	
-	exports.default = Main;
-
-/***/ },
-/* 282 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
@@ -29793,7 +29752,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactAddonsCssTransitionGroup = __webpack_require__(283);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(282);
 	
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 	
@@ -29822,13 +29781,13 @@
 	exports.default = SectionWrapper;
 
 /***/ },
-/* 283 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(284);
+	module.exports = __webpack_require__(283);
 
 /***/ },
-/* 284 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29853,8 +29812,8 @@
 	
 	var React = __webpack_require__(2);
 	
-	var ReactTransitionGroup = __webpack_require__(285);
-	var ReactCSSTransitionGroupChild = __webpack_require__(288);
+	var ReactTransitionGroup = __webpack_require__(284);
+	var ReactCSSTransitionGroupChild = __webpack_require__(287);
 	
 	function createTransitionTimeoutPropValidator(transitionType) {
 	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
@@ -29937,7 +29896,7 @@
 	module.exports = ReactCSSTransitionGroup;
 
 /***/ },
-/* 285 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29961,7 +29920,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var React = __webpack_require__(2);
-	var ReactTransitionChildMapping = __webpack_require__(286);
+	var ReactTransitionChildMapping = __webpack_require__(285);
 	
 	var emptyFunction = __webpack_require__(12);
 	
@@ -30170,7 +30129,7 @@
 	module.exports = ReactTransitionGroup;
 
 /***/ },
-/* 286 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -30185,7 +30144,7 @@
 	
 	'use strict';
 	
-	var flattenChildren = __webpack_require__(287);
+	var flattenChildren = __webpack_require__(286);
 	
 	var ReactTransitionChildMapping = {
 	  /**
@@ -30278,7 +30237,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 287 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -30359,7 +30318,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 288 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30375,10 +30334,10 @@
 	'use strict';
 	
 	var React = __webpack_require__(2);
-	var ReactAddonsDOMDependencies = __webpack_require__(289);
+	var ReactAddonsDOMDependencies = __webpack_require__(288);
 	
-	var CSSCore = __webpack_require__(294);
-	var ReactTransitionEvents = __webpack_require__(295);
+	var CSSCore = __webpack_require__(293);
+	var ReactTransitionEvents = __webpack_require__(294);
 	
 	var onlyChild = __webpack_require__(31);
 	
@@ -30530,7 +30489,7 @@
 	module.exports = ReactCSSTransitionGroupChild;
 
 /***/ },
-/* 289 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -30557,14 +30516,14 @@
 	
 	  exports.getReactPerf = function () {
 	    if (!ReactPerf) {
-	      ReactPerf = __webpack_require__(290);
+	      ReactPerf = __webpack_require__(289);
 	    }
 	    return ReactPerf;
 	  };
 	
 	  exports.getReactTestUtils = function () {
 	    if (!ReactTestUtils) {
-	      ReactTestUtils = __webpack_require__(291);
+	      ReactTestUtils = __webpack_require__(290);
 	    }
 	    return ReactTestUtils;
 	  };
@@ -30572,7 +30531,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 290 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -31078,7 +31037,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 291 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -31096,7 +31055,7 @@
 	var _prodInvariant = __webpack_require__(35),
 	    _assign = __webpack_require__(4);
 	
-	var EventConstants = __webpack_require__(292);
+	var EventConstants = __webpack_require__(291);
 	var EventPluginHub = __webpack_require__(42);
 	var EventPluginRegistry = __webpack_require__(43);
 	var EventPropagators = __webpack_require__(41);
@@ -31107,7 +31066,7 @@
 	var ReactInstanceMap = __webpack_require__(116);
 	var ReactUpdates = __webpack_require__(56);
 	var SyntheticEvent = __webpack_require__(53);
-	var ReactShallowRenderer = __webpack_require__(293);
+	var ReactShallowRenderer = __webpack_require__(292);
 	
 	var findDOMNode = __webpack_require__(172);
 	var invariant = __webpack_require__(8);
@@ -31495,7 +31454,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 292 */
+/* 291 */
 /***/ function(module, exports) {
 
 	/**
@@ -31591,7 +31550,7 @@
 	module.exports = EventConstants;
 
 /***/ },
-/* 293 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -31731,7 +31690,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 294 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -31858,7 +31817,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 295 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31935,7 +31894,7 @@
 	module.exports = ReactTransitionEvents;
 
 /***/ },
-/* 296 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31946,7 +31905,7 @@
 	
 	var _reactRedux = __webpack_require__(178);
 	
-	var _Resume = __webpack_require__(297);
+	var _Resume = __webpack_require__(296);
 	
 	var _Resume2 = _interopRequireDefault(_Resume);
 	
@@ -31961,7 +31920,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(_Resume2.default);
 
 /***/ },
-/* 297 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31974,23 +31933,23 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Header = __webpack_require__(298);
+	var _Header = __webpack_require__(297);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	var _Banner = __webpack_require__(299);
+	var _Banner = __webpack_require__(298);
 	
 	var _Banner2 = _interopRequireDefault(_Banner);
 	
-	var _navbarComponents = __webpack_require__(300);
+	var _navbarComponents = __webpack_require__(299);
 	
 	var _navbarComponents2 = _interopRequireDefault(_navbarComponents);
 	
-	var _ChangeSection = __webpack_require__(302);
+	var _ChangeSection = __webpack_require__(301);
 	
 	var _ChangeSection2 = _interopRequireDefault(_ChangeSection);
 	
-	var _resumeComponents = __webpack_require__(303);
+	var _resumeComponents = __webpack_require__(302);
 	
 	var _resumeComponents2 = _interopRequireDefault(_resumeComponents);
 	
@@ -32024,7 +31983,7 @@
 	exports.default = Resume;
 
 /***/ },
-/* 298 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32108,7 +32067,7 @@
 	exports.default = (0, _reactRedux.connect)()(Header);
 
 /***/ },
-/* 299 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32144,7 +32103,7 @@
 	exports.default = Banner;
 
 /***/ },
-/* 300 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32157,7 +32116,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _navItem = __webpack_require__(301);
+	var _navItem = __webpack_require__(300);
 	
 	var _navItem2 = _interopRequireDefault(_navItem);
 	
@@ -32188,7 +32147,7 @@
 	exports.default = Navbar;
 
 /***/ },
-/* 301 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32229,7 +32188,7 @@
 	exports.default = NavItem;
 
 /***/ },
-/* 302 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32261,7 +32220,7 @@
 	exports.default = ChangeSection;
 
 /***/ },
-/* 303 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32274,27 +32233,27 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _work = __webpack_require__(304);
+	var _work = __webpack_require__(303);
 	
 	var _work2 = _interopRequireDefault(_work);
 	
-	var _about = __webpack_require__(305);
+	var _about = __webpack_require__(304);
 	
 	var _about2 = _interopRequireDefault(_about);
 	
-	var _skills = __webpack_require__(306);
+	var _skills = __webpack_require__(305);
 	
 	var _skills2 = _interopRequireDefault(_skills);
 	
-	var _footer = __webpack_require__(307);
+	var _footer = __webpack_require__(306);
 	
 	var _footer2 = _interopRequireDefault(_footer);
 	
-	var _education = __webpack_require__(308);
+	var _education = __webpack_require__(307);
 	
 	var _education2 = _interopRequireDefault(_education);
 	
-	var _portfolio = __webpack_require__(309);
+	var _portfolio = __webpack_require__(308);
 	
 	var _portfolio2 = _interopRequireDefault(_portfolio);
 	
@@ -32322,7 +32281,7 @@
 	exports.default = ResumeComponents;
 
 /***/ },
-/* 304 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32358,7 +32317,7 @@
 	exports.default = Work;
 
 /***/ },
-/* 305 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32394,7 +32353,7 @@
 	exports.default = About;
 
 /***/ },
-/* 306 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32430,7 +32389,7 @@
 	exports.default = Skills;
 
 /***/ },
-/* 307 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32470,7 +32429,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 308 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32506,7 +32465,7 @@
 	exports.default = Education;
 
 /***/ },
-/* 309 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32542,16 +32501,16 @@
 	exports.default = Portfolio;
 
 /***/ },
-/* 310 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(311);
+	var content = __webpack_require__(310);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(313)(content, {});
+	var update = __webpack_require__(312)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -32568,21 +32527,21 @@
 	}
 
 /***/ },
-/* 311 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(312)();
+	exports = module.exports = __webpack_require__(311)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "/*~~~~~~~~~~~~~~ resume about ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume work ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume education ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume skills ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume portfolio ~~~~~~~~~~~~~~*/\n@keyframes gradwave {\n  0% {\n    background-position: 0% 50%; }\n  50% {\n    background-position: 100% 51%; }\n  100% {\n    background-position: 0% 50%; } }\n\n@keyframes hueShift {\n  0% {\n    -webkit-filter: hue-rotate(180deg); }\n  50% {\n    -webkit-filter: hue-rotate(0deg); }\n  100% {\n    -webkit-filter: hue-rotate(180deg); } }\n\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\n*,\n*:before,\n*:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\nhtml {\n  -webkit-font-smoothing: antialiased; }\n\nbody {\n  margin: 0;\n  background-color: #2a2a2a;\n  -webkit-animation: hueShift 29s infinite linear;\n  -webkit-font-smoothing: antialiased; }\n\nmain {\n  background: linear-gradient(to left top, #FFF, #EEE, 1%, #222);\n  background-size: 162%; }\n\n/**\n * Basic typography style for copy text\n */\nh1, h2, h3, h4, h5, h6 {\n  font-family: sans-serif;\n  font-weight: normal; }\n\nh1 a, h2 a, h3 a, h4 a, h5 a, h6 a {\n  font-weight: inherit; }\n\nh1 {\n  font-size: 5rem;\n  margin-bottom: 12px; }\n\nh2 {\n  font-size: 4rem;\n  margin-bottom: 6px; }\n\nh3 {\n  font-size: 22px;\n  margin-bottom: 12px; }\n\nh4 {\n  font-size: 20px;\n  margin-bottom: 6px; }\n\nh5 {\n  font-size: 18px; }\n\nh6 {\n  font-size: 14px; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-weight: 100;\n  letter-spacing: -.062em;\n  font-family: sans-serif;\n  margin: auto; }\n\na {\n  color: inherit;\n  text-decoration: none; }\n\np {\n  margin: 0 0 30px 0; }\n\n.menu-item {\n  font-size: 1.25rem;\n  font-family: sans-serif; }\n\n.top {\n  z-index: 99;\n  position: relative; }\n\n.center {\n  line-height: 100vh;\n  text-align: center; }\n\n/*~~~~~~~~~~~~ ReactCSSTransitionGroup~~~~~~~~~~~~~*/\n.appear-enter {\n  transition-duration: 20s;\n  transition-property: opacity;\n  transition-timing-function: ease-out;\n  opacity: 0; }\n\n.appear-enter.appear-enter-active {\n  opacity: 1; }\n\n.appear-leave {\n  opacity: 0; }\n\n/*~~~~~~~~~~~~~~~~ Resume-Content ~~~~~~~~~~~~~~~~*/\nheader {\n  position: relative;\n  height: 800px;\n  min-height: 500px;\n  width: 100%;\n  background-size: cover !important;\n  -webkit-background-size: cover !important;\n  text-align: center;\n  overflow: hidden; }\n\n/* vertically center banner section */\nheader:before {\n  content: '';\n  display: inline-block;\n  vertical-align: middle;\n  height: 100%; }\n\nheader .banner {\n  display: inline-block;\n  vertical-align: middle;\n  margin: 0 auto;\n  width: 42%;\n  padding-bottom: 30px;\n  text-align: center; }\n\nheader .banner-text {\n  width: 100%; }\n\nheader .banner-text h1 {\n  color: #fff;\n  margin: 0 auto 18px auto;\n  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);\n  -webkit-transition: all .3s ease-in-out;\n  -moz-transition: all .3s ease-in-out;\n  transition: all .3s ease-in-out; }\n\nheader .banner-text h1:hover {\n  color: #444FFF; }\n\nheader .banner-text h3 {\n  color: #A8A8A8;\n  margin: 0 auto;\n  width: 70%;\n  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); }\n\nheader .banner-text h3 span,\nheader .banner-text h3 a {\n  color: #fff; }\n\nheader .banner-text hr {\n  width: 60%;\n  margin: 18px auto 24px auto;\n  border-color: #2F2D2E;\n  border-color: rgba(150, 150, 150, 0.1); }\n\n/* header social links */\nheader .social {\n  margin: 24px 0;\n  padding: 0;\n  font-size: 30px;\n  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8); }\n\nheader .social li {\n  display: inline-block;\n  margin: 0 15px;\n  padding: 0; }\n\nheader .social li a {\n  color: #2a2a2a; }\n\nheader .social li a:hover {\n  color: #444FFF; }\n\n/* scrolldown link */\nheader .scrolldown a {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  margin-left: -29px;\n  color: #fff;\n  display: block;\n  height: 42px;\n  width: auto;\n  color: #fff;\n  border-radius: 100%;\n  -webkit-transition: all .3s ease-in-out;\n  -moz-transition: all .3s ease-in-out;\n  transition: all .3s ease-in-out; }\n\nheader .scrolldown a:hover {\n  color: #444FFF; }\n\n#about {\n  background: linear-gradient(to left bottom, #349, #237, 38%, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: bottom;\n  padding-top: 96px;\n  padding-bottom: 66px;\n  overflow: hidden; }\n\n#work {\n  background: linear-gradient(to right bottom, #349, #444FFF, 38%, #CEE, #EEE);\n  background-size: 162%;\n  background-position: bottom;\n  padding-top: 90px;\n  padding-bottom: 0px;\n  overflow: hidden; }\n\n#education {\n  background: linear-gradient(to left top, #444FFF, #349, 38%, #2a2a2a, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: top;\n  padding-top: 72px;\n  padding-bottom: 0px;\n  overflow: hidden; }\n\n#skills {\n  background: linear-gradient(to right top, #349, #444FFF, 38%, #CEE, #EEE, #EFF);\n  background-size: 162%;\n  background-position: top;\n  padding-top: 72px;\n  padding-bottom: 20px;\n  overflow: hidden; }\n\n#portfolio {\n  background: linear-gradient(to left top, #349, #237, 62%, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: auto;\n  padding-top: 90px;\n  padding-bottom: 60px; }\n\n#contact {\n  background: #191919;\n  background-size: 162%;\n  background-position: auto;\n  padding-top: 96px;\n  padding-bottom: 102px;\n  color: #636363; }\n\n#contact .section-head {\n  margin-bottom: 42px; }\n\nfooter {\n  padding-top: 48px;\n  margin-bottom: 48px;\n  color: #303030;\n  font-size: 14px;\n  text-align: center;\n  position: relative; }\n\nfooter a, footer a:visited {\n  color: #2a2a2a; }\n\nfooter a:hover, footer a:focus {\n  color: #444FFF; }\n\n#nav-wrap ul, #nav-wrap li, #nav-wrap a {\n  margin: 0;\n  padding: 0;\n  border: none;\n  outline: none; }\n\n/* nav-wrap */\n#nav-wrap {\n  font: 12px 'opensans-bold', sans-serif;\n  width: 100%;\n  text-transform: uppercase;\n  letter-spacing: 2.5px;\n  margin: 0 auto;\n  z-index: 999;\n  position: fixed;\n  left: 0;\n  top: 0; }\n\n.opaque {\n  background-color: rgba(13, 13, 13, 0.8); }\n\n/* hide toggle button */\n#nav-wrap > a.mobile-btn {\n  display: none; }\n\nul#nav {\n  min-height: 48px;\n  width: auto;\n  /* center align the menu */\n  text-align: center; }\n\nul#nav li {\n  position: relative;\n  list-style: none;\n  height: 48px;\n  display: inline-block; }\n\n/* Links */\nul#nav li a {\n  /* 8px padding top + 8px padding bottom + 32px line-height = 48px */\n  display: inline-block;\n  padding: 8px 13px;\n  line-height: 32px;\n  text-decoration: none;\n  text-align: left;\n  color: #444FFF;\n  -webkit-transition: color .2s ease-in-out;\n  -moz-transition: color .2s ease-in-out;\n  -ms-transition: color .2s ease-in-out;\n  transition: color .2s ease-in-out; }\n\nul#nav li a:active {\n  background-color: transparent !important; }\n\nul#nav li.current a {\n  color: #F06000; }\n\n/* Position and sizing of burger button */\n.bm-burger-button {\n  z-index: 9991 !important;\n  position: fixed;\n  width: 34px;\n  height: 21px;\n  left: 3vh;\n  top: 3vh; }\n\n/* Color/shape of burger icon bars */\n.bm-burger-bars {\n  background: #444FFF; }\n\n/* Position and sizing of clickable cross button */\n.bm-cross-button {\n  height: 24px;\n  width: 24px; }\n\n/* Color/shape of close button cross */\n.bm-cross {\n  background: #444FFF; }\n\n/* General sidebar styles */\n.bm-menu {\n  background: linear-gradient(13deg, rgba(13, 13, 13, 0.8), #2a2a2a);\n  background-size: 666% 666%;\n  background-position: top;\n  padding: 2.5em 1.5em 0; }\n\n/* Wrapper for item list */\n.bm-item-list {\n  color: #2a2a2a;\n  padding: 0.9em; }\n\n/* Styling of overlay */\n.bm-overlay {\n  background: rgba(0, 0, 0, 0.1); }\n\n/* Morph shape necessary with bubble or elastic */\n.menu-item {\n  text-align: center;\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 5px;\n  border-color: #444FFF;\n  padding: 13px 21px;\n  margin: 8px auto; }\n\n#sidebar {\n  z-index: 9999 !important; }\n\n#particles-js {\n  top: 0;\n  left: 0;\n  z-index: 0;\n  color: #444FFF;\n  position: absolute; }\n\n.wavy--shit {\n  color: transparent;\n  background: linear-gradient(162deg, #9a5fba, #68099D, #ffff59);\n  background-size: 666% 666%;\n  -webkit-background-clip: text;\n  -webkit-animation: gradwave 13s ease infinite; }\n\n.wavy--border {\n  color: transparent;\n  border: 2.5px solid #ffff59;\n  border-radius: 4px;\n  line-height: 1.375;\n  padding: .75rem 1.5rem;\n  margin: .375rem;\n  font-weight: 400;\n  -webkit-animation: hueShift 26s infinite linear; }\n  .wavy--border:hover {\n    color: #ffff59; }\n\n.shadow {\n  color: #444FFF;\n  text-shadow: 0.5px 0.5px 0px #2f0446, 1px 1px 0px #2f0446, 1.5px 1.5px 0px #1c0229;\n  transition: all 0.05s ease-out; }\n  .shadow:hover {\n    position: relative;\n    top: -1.8px;\n    left: -1.8px;\n    text-shadow: 0.5px 0.5px 0px #450a65, 1px 1px 0px #2f0446, 1.5px 1.5px 0px #1c0229, 2px 2px 0px #1c0229, 2.5px 2.5px 0px #0a0017, 3px 3px 0px #0a0017; }\n", ""]);
+	exports.push([module.id, "/*~~~~~~~~~~~~~~ resume about ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume work ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume education ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume skills ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume portfolio ~~~~~~~~~~~~~~*/\n@keyframes gradwave {\n  0% {\n    background-position: 0% 50%; }\n  50% {\n    background-position: 100% 51%; }\n  100% {\n    background-position: 0% 50%; } }\n\n@keyframes hueShift {\n  0% {\n    -webkit-filter: hue-rotate(180deg); }\n  50% {\n    -webkit-filter: hue-rotate(0deg); }\n  100% {\n    -webkit-filter: hue-rotate(180deg); } }\n\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\n*,\n*:before,\n*:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\nhtml {\n  -webkit-font-smoothing: antialiased; }\n\nbody {\n  margin: 0;\n  background-color: #2a2a2a;\n  -webkit-animation: hueShift 29s infinite linear;\n  -webkit-font-smoothing: antialiased; }\n\nmain {\n  background: linear-gradient(to left top, #FFF, #EEE, 1%, #222);\n  background-size: 162%; }\n\n/**\n * Basic typography style for copy text\n */\nh1, h2, h3, h4, h5, h6 {\n  font-family: 'Fredericka the Great', cursive;\n  font-weight: normal; }\n\nh1 a, h2 a, h3 a, h4 a, h5 a, h6 a {\n  font-weight: inherit; }\n\nh1 {\n  font-size: 5rem;\n  margin-bottom: 12px; }\n\nh2 {\n  font-size: 4rem;\n  margin-bottom: 6px; }\n\nh3 {\n  font-size: 22px;\n  margin-bottom: 12px; }\n\nh4 {\n  font-size: 20px;\n  margin-bottom: 6px; }\n\nh5 {\n  font-size: 18px; }\n\nh6 {\n  font-size: 14px; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-weight: 100;\n  letter-spacing: -.062em;\n  font-family: sans-serif;\n  margin: auto; }\n\na {\n  color: inherit;\n  text-decoration: none; }\n\np {\n  margin: 0 0 30px 0; }\n\n.menu-item {\n  font-size: 1.25rem;\n  font-family: sans-serif; }\n\n.top {\n  z-index: 99;\n  position: relative; }\n\n.center {\n  line-height: 100vh;\n  text-align: center; }\n\n/*~~~~~~~~~~~~ ReactCSSTransitionGroup~~~~~~~~~~~~~*/\n.appear-enter {\n  transition-duration: 20s;\n  transition-property: opacity;\n  transition-timing-function: ease-out;\n  opacity: 0; }\n\n.appear-enter.appear-enter-active {\n  opacity: 1; }\n\n.appear-leave {\n  opacity: 0; }\n\n/*~~~~~~~~~~~~~~~~ Resume-Content ~~~~~~~~~~~~~~~~*/\nheader {\n  position: relative;\n  height: 800px;\n  min-height: 500px;\n  width: 100%;\n  background-size: cover !important;\n  -webkit-background-size: cover !important;\n  text-align: center;\n  overflow: hidden; }\n\n/* vertically center banner section */\nheader:before {\n  content: '';\n  display: inline-block;\n  vertical-align: middle;\n  height: 100%; }\n\nheader .banner {\n  display: inline-block;\n  vertical-align: middle;\n  margin: 0 auto;\n  width: 42%;\n  padding-bottom: 30px;\n  text-align: center; }\n\nheader .banner-text {\n  width: 100%; }\n\nheader .banner-text h1 {\n  color: #fff;\n  margin: 0 auto 18px auto;\n  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);\n  -webkit-transition: all .3s ease-in-out;\n  -moz-transition: all .3s ease-in-out;\n  transition: all .3s ease-in-out; }\n\nheader .banner-text h1:hover {\n  color: #444FFF; }\n\nheader .banner-text h3 {\n  color: #A8A8A8;\n  margin: 0 auto;\n  width: 70%;\n  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); }\n\nheader .banner-text h3 span,\nheader .banner-text h3 a {\n  color: #fff; }\n\nheader .banner-text hr {\n  width: 60%;\n  margin: 18px auto 24px auto;\n  border-color: #2F2D2E;\n  border-color: rgba(150, 150, 150, 0.1); }\n\n/* header social links */\nheader .social {\n  margin: 24px 0;\n  padding: 0;\n  font-size: 30px;\n  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8); }\n\nheader .social li {\n  display: inline-block;\n  margin: 0 15px;\n  padding: 0; }\n\nheader .social li a {\n  color: #2a2a2a; }\n\nheader .social li a:hover {\n  color: #444FFF; }\n\n/* scrolldown link */\nheader .scrolldown a {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  margin-left: -29px;\n  color: #fff;\n  display: block;\n  height: 42px;\n  width: auto;\n  color: #fff;\n  border-radius: 100%;\n  -webkit-transition: all .3s ease-in-out;\n  -moz-transition: all .3s ease-in-out;\n  transition: all .3s ease-in-out; }\n\nheader .scrolldown a:hover {\n  color: #444FFF; }\n\n#about {\n  background: linear-gradient(to left bottom, #349, #237, 38%, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: bottom;\n  padding-top: 96px;\n  padding-bottom: 66px;\n  overflow: hidden; }\n\n#work {\n  background: linear-gradient(to right bottom, #349, #444FFF, 38%, #CEE, #EEE);\n  background-size: 162%;\n  background-position: bottom;\n  padding-top: 90px;\n  padding-bottom: 0px;\n  overflow: hidden; }\n\n#education {\n  background: linear-gradient(to left top, #444FFF, #349, 38%, #2a2a2a, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: top;\n  padding-top: 72px;\n  padding-bottom: 0px;\n  overflow: hidden; }\n\n#skills {\n  background: linear-gradient(to right top, #349, #444FFF, 38%, #CEE, #EEE, #EFF);\n  background-size: 162%;\n  background-position: top;\n  padding-top: 72px;\n  padding-bottom: 20px;\n  overflow: hidden; }\n\n#portfolio {\n  background: linear-gradient(to left top, #349, #237, 62%, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: auto;\n  padding-top: 90px;\n  padding-bottom: 60px; }\n\n#contact {\n  background: #191919;\n  background-size: 162%;\n  background-position: auto;\n  padding-top: 96px;\n  padding-bottom: 102px;\n  color: #636363; }\n\n#contact .section-head {\n  margin-bottom: 42px; }\n\nfooter {\n  padding-top: 48px;\n  margin-bottom: 48px;\n  color: #303030;\n  font-size: 14px;\n  text-align: center;\n  position: relative; }\n\nfooter a, footer a:visited {\n  color: #2a2a2a; }\n\nfooter a:hover, footer a:focus {\n  color: #444FFF; }\n\n#nav-wrap ul, #nav-wrap li, #nav-wrap a {\n  margin: 0;\n  padding: 0;\n  border: none;\n  outline: none; }\n\n/* nav-wrap */\n#nav-wrap {\n  font: 12px 'opensans-bold', sans-serif;\n  width: 100%;\n  text-transform: uppercase;\n  letter-spacing: 2.5px;\n  margin: 0 auto;\n  z-index: 999;\n  position: fixed;\n  left: 0;\n  top: 0; }\n\n.opaque {\n  background-color: rgba(13, 13, 13, 0.8); }\n\n/* hide toggle button */\n#nav-wrap > a.mobile-btn {\n  display: none; }\n\nul#nav {\n  min-height: 48px;\n  width: auto;\n  /* center align the menu */\n  text-align: center; }\n\nul#nav li {\n  position: relative;\n  list-style: none;\n  height: 48px;\n  display: inline-block; }\n\n/* Links */\nul#nav li a {\n  /* 8px padding top + 8px padding bottom + 32px line-height = 48px */\n  display: inline-block;\n  padding: 8px 13px;\n  line-height: 32px;\n  text-decoration: none;\n  text-align: left;\n  color: #444FFF;\n  -webkit-transition: color .2s ease-in-out;\n  -moz-transition: color .2s ease-in-out;\n  -ms-transition: color .2s ease-in-out;\n  transition: color .2s ease-in-out; }\n\nul#nav li a:active {\n  background-color: transparent !important; }\n\nul#nav li.current a {\n  color: #F06000; }\n\n/* Position and sizing of burger button */\n.bm-burger-button {\n  z-index: 9991 !important;\n  position: fixed;\n  width: 34px;\n  height: 21px;\n  left: 3vh;\n  top: 3vh; }\n\n/* Color/shape of burger icon bars */\n.bm-burger-bars {\n  background: #444FFF; }\n\n/* Position and sizing of clickable cross button */\n.bm-cross-button {\n  height: 24px;\n  width: 24px; }\n\n/* Color/shape of close button cross */\n.bm-cross {\n  background: #444FFF; }\n\n/* General sidebar styles */\n.bm-menu {\n  background: linear-gradient(13deg, rgba(13, 13, 13, 0.8), #2a2a2a);\n  background-size: 666% 666%;\n  background-position: top;\n  padding: 2.5em 1.5em 0; }\n\n/* Wrapper for item list */\n.bm-item-list {\n  color: #2a2a2a;\n  padding: 0.9em; }\n\n/* Styling of overlay */\n.bm-overlay {\n  background: rgba(0, 0, 0, 0.1); }\n\n/* Morph shape necessary with bubble or elastic */\n.menu-item {\n  text-align: center;\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 5px;\n  border-color: #444FFF;\n  padding: 13px 21px;\n  margin: 8px auto; }\n\n#sidebar {\n  z-index: 9999 !important; }\n\n#particles-js {\n  top: 0;\n  left: 0;\n  z-index: 0;\n  color: #444FFF;\n  position: absolute; }\n\n.wavy--shit {\n  color: transparent;\n  background: linear-gradient(162deg, #9a5fba, #68099D, #ffff59);\n  background-size: 666% 666%;\n  -webkit-background-clip: text;\n  -webkit-animation: gradwave 13s ease infinite; }\n\n.wavy--border {\n  color: transparent;\n  border: 2.5px solid #ffff59;\n  border-radius: 4px;\n  line-height: 1.375;\n  padding: .75rem 1.5rem;\n  margin: .375rem;\n  font-weight: 400;\n  -webkit-animation: hueShift 26s infinite linear; }\n  .wavy--border:hover {\n    color: #ffff59; }\n\n.shadow {\n  color: #444FFF;\n  text-shadow: 0.5px 0.5px 0px #2f0446, 1px 1px 0px #2f0446, 1.5px 1.5px 0px #1c0229;\n  transition: all 0.05s ease-out; }\n  .shadow:hover {\n    position: relative;\n    top: -1.8px;\n    left: -1.8px;\n    text-shadow: 0.5px 0.5px 0px #450a65, 1px 1px 0px #2f0446, 1.5px 1.5px 0px #1c0229, 2px 2px 0px #1c0229, 2.5px 2.5px 0px #0a0017, 3px 3px 0px #0a0017; }\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 312 */
+/* 311 */
 /***/ function(module, exports) {
 
 	/*
@@ -32638,7 +32597,7 @@
 
 
 /***/ },
-/* 313 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
