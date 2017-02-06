@@ -24701,7 +24701,7 @@
 	});
 	var initialState = {
 	  navbar: {
-	    root: 'resume',
+	    root: '/',
 	    home: 'Home',
 	    about: 'About',
 	    work: 'Work',
@@ -24764,13 +24764,8 @@
 	    { history: _reactRouter.browserHistory },
 	    _react2.default.createElement(
 	      _reactRouter.Route,
-	      { path: '/', component: _Main2.default },
-	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _SectionWrapper2.default }),
-	      _react2.default.createElement(
-	        _reactRouter.Route,
-	        { path: '/resume', component: _SectionWrapper2.default },
-	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _ResumeContainer2.default })
-	      )
+	      { path: '/', component: _SectionWrapper2.default },
+	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _ResumeContainer2.default })
 	    )
 	  );
 	};

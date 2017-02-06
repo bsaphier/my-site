@@ -1,6 +1,6 @@
 const initialState = {
   navbar: {
-    root: 'resume',
+    root: '/',
     home: 'Home',
     about: 'About',
     work: 'Work',
