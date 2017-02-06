@@ -24701,7 +24701,7 @@
 	});
 	var initialState = {
 	  navbar: {
-	    root: '/',
+	    root: '/my-site/',
 	    home: 'Home',
 	    about: 'About',
 	    work: 'Work',
