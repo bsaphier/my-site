@@ -24764,7 +24764,7 @@
 	    { history: _reactRouter.browserHistory },
 	    _react2.default.createElement(
 	      _reactRouter.Route,
-	      { path: '/', component: _SectionWrapper2.default },
+	      { path: '/my-site', component: _SectionWrapper2.default },
 	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _ResumeContainer2.default })
 	    )
 	  );

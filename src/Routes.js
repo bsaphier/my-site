@@ -19,7 +19,7 @@ const Routes = () => (
     {/* <Route path="/" component={Main}> */}
       {/* <IndexRoute component={HomePageContainer} /> */}
       {/* <IndexRoute component={SectionWrapper} /> */}
-      <Route path="/" component={SectionWrapper}>
+      <Route path="/my-site" component={SectionWrapper}>
         <IndexRoute component={ResumeContainer} />
       </Route>
       {/* <Route path="/monotron" component={MonotronContainer} />
