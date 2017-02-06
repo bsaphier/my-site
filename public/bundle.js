@@ -24701,7 +24701,7 @@
 	});
 	var initialState = {
 	  navbar: {
-	    root: '/resume',
+	    root: 'resume',
 	    home: 'Home',
 	    about: 'About',
 	    work: 'Work',
@@ -24761,13 +24761,14 @@
 	var Routes = function Routes() {
 	  return _react2.default.createElement(
 	    _reactRouter.Router,
-	    { history: _reactRouter.hashHistory },
+	    { history: _reactRouter.browserHistory },
 	    _react2.default.createElement(
 	      _reactRouter.Route,
 	      { path: '/', component: _Main2.default },
+	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _SectionWrapper2.default }),
 	      _react2.default.createElement(
 	        _reactRouter.Route,
-	        { path: '*', component: _SectionWrapper2.default },
+	        { path: '/resume', component: _SectionWrapper2.default },
 	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _ResumeContainer2.default })
 	      )
 	    )
@@ -29807,6 +29808,7 @@
 	  var children = _ref.children,
 	      location = _ref.location;
 	
+	  console.log(location);
 	  return _react2.default.createElement(
 	    'div',
 	    { className: 'section-container' },
@@ -29817,7 +29819,7 @@
 	        transitionEnterTimeout: 500,
 	        transitionLeaveTimeout: 500
 	      },
-	      _react2.default.cloneElement(children, { key: location.pathname })
+	      _react2.default.cloneElement(children, { key: '' + location.pathname })
 	    )
 	  );
 	};
@@ -32019,7 +32021,6 @@
 	      basics: resume.basics,
 	      skills: resume.skills,
 	      education: resume.education,
-	      references: resume.references,
 	      portfolio: resume.portfolio
 	    })
 	  );
@@ -32181,7 +32182,7 @@
 	        return navItemTitle === navbar.root ? null : _react2.default.createElement(_navItem2.default, {
 	          link: navLink,
 	          name: navItemTitle,
-	          key: 'nav' + idx * 1,
+	          key: 'nav' + idx,
 	          rootPath: navbar.root
 	        });
 	      })
@@ -32257,7 +32258,7 @@
 	    _react2.default.createElement(
 	      "a",
 	      { className: "smoothscroll", href: "#" + link },
-	      "replace this text"
+	      "ABOUT ME"
 	    )
 	  );
 	};
@@ -32460,7 +32461,7 @@
 	      { id: "go-top" },
 	      _react2.default.createElement(
 	        "a",
-	        { className: "smoothscroll", title: "Back to Top", href: "#resume" },
+	        { className: "smoothscroll", title: "Back to Top", href: "#" },
 	        _react2.default.createElement(
 	          "h2",
 	          { className: "shadow" },
@@ -32533,7 +32534,7 @@
 	    { id: "portfolio" },
 	    _react2.default.createElement(
 	      "a",
-	      { className: "smoothscroll", href: "#resume" },
+	      { className: "smoothscroll", href: "#" },
 	      _react2.default.createElement(
 	        "h1",
 	        { className: "center shadow" },

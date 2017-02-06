@@ -2,7 +2,7 @@ import {
   Route,
   Router,
   IndexRoute,
-  hashHistory
+  browserHistory
 } from 'react-router';
 import React from 'react';
 
@@ -15,11 +15,11 @@ import ResumeContainer from './containers/ResumeContainer';
 
 
 const Routes = () => (
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={Main}>
-      {/* <IndexRoute component={HomePageContainer} />
-      <IndexRoute component={SectionWrapper} /> */}
-      <Route path="*" component={SectionWrapper}>
+      {/* <IndexRoute component={HomePageContainer} /> */}
+      <IndexRoute component={SectionWrapper} />
+      <Route path="/resume" component={SectionWrapper}>
         <IndexRoute component={ResumeContainer} />
       </Route>
       {/* <Route path="/monotron" component={MonotronContainer} />

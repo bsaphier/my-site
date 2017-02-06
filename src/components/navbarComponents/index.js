@@ -13,7 +13,7 @@ const Navbar = ({ navbar }) => {
             (<NavItem
               link={navLink}
               name={navItemTitle}
-              key={`nav${idx * 1}`}
+              key={`nav${idx}`}
               rootPath={navbar.root}
             />);
         })}

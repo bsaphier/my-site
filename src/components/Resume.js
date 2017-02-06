@@ -23,7 +23,6 @@ const Resume = ({ resume }) => {
         basics={ resume.basics }
         skills={ resume.skills }
         education={ resume.education }
-        references={ resume.references }
         portfolio={ resume.portfolio }
       />
     </div>

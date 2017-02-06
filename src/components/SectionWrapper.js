@@ -2,6 +2,7 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const SectionWrapper = ({ children, location }) => {
+  console.log(location);
   return (
     <div className="section-container">
       <ReactCSSTransitionGroup
@@ -11,7 +12,7 @@ const SectionWrapper = ({ children, location }) => {
       >
         {React.cloneElement(
           children,
-          {key: location.pathname}
+          {key: `${location.pathname}`}
         )}
       </ReactCSSTransitionGroup>
     </div>
