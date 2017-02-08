@@ -24769,7 +24769,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	(0, _reactTapEventPlugin2.default)();
-	__webpack_require__(474);
+	__webpack_require__(456);
 	
 	var Routes = function Routes() {
 	  return _react2.default.createElement(
@@ -40026,34 +40026,16 @@
 	exports.default = ChangeSection;
 
 /***/ },
-/* 456 */,
-/* 457 */,
-/* 458 */,
-/* 459 */,
-/* 460 */,
-/* 461 */,
-/* 462 */,
-/* 463 */,
-/* 464 */,
-/* 465 */,
-/* 466 */,
-/* 467 */,
-/* 468 */,
-/* 469 */,
-/* 470 */,
-/* 471 */,
-/* 472 */,
-/* 473 */,
-/* 474 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(475);
+	var content = __webpack_require__(457);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(477)(content, {});
+	var update = __webpack_require__(459)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -40070,10 +40052,10 @@
 	}
 
 /***/ },
-/* 475 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(476)();
+	exports = module.exports = __webpack_require__(458)();
 	// imports
 	
 	
@@ -40084,7 +40066,7 @@
 
 
 /***/ },
-/* 476 */
+/* 458 */
 /***/ function(module, exports) {
 
 	/*
@@ -40140,7 +40122,7 @@
 
 
 /***/ },
-/* 477 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
