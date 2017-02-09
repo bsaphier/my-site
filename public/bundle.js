@@ -37665,8 +37665,6 @@
 	var SectionWrapper = function SectionWrapper(_ref) {
 	  var children = _ref.children,
 	      location = _ref.location;
-	
-	  console.log(location);
 	  return _react2.default.createElement(
 	    'div',
 	    { className: 'section-container' },
