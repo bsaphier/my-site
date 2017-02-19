@@ -5,7 +5,7 @@ import Header from '../containers/Header';
 import Banner from './Banner';
 import Navbar from './navbarComponents';
 import ChangeSection from './ChangeSection';
-// import ResumeComponents from './resumeComponents';
+import ResumeComponents from './resumeComponents';
 
 
 const Resume = ({ resume }) => {
@@ -17,15 +17,15 @@ const Resume = ({ resume }) => {
           title={ resume.basics }
           text={ resume.text }
         />
-        {/* <ChangeSection link="about" /> */}
+        <ChangeSection link="about" />
       </Header>
-      {/* <ResumeComponents
+      <ResumeComponents
         work={ resume.work }
         basics={ resume.basics }
         skills={ resume.skills }
         education={ resume.education }
         portfolio={ resume.portfolio }
-      /> */}
+      />
     </div>
   );
 };
