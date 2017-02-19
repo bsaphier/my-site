@@ -2,27 +2,25 @@ import {
   Route,
   Router,
   IndexRoute,
+  IndexRedirect,
   browserHistory
 } from 'react-router';
 import React from 'react';
 
 import Main from './components/Main';
 import SectionWrapper from './components/SectionWrapper';
-
 import ResumeContainer from './containers/ResumeContainer';
-import HomePageContainer from './containers/HomePageContainer';
-import MonotronContainer from './containers/MonotronContainer';
+
+require('./stylesheets/main.scss');
 
 
 const Routes = () => (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
-      <IndexRoute component={HomePageContainer} />
-      <Route path="/resume" component={SectionWrapper}>
+      <IndexRedirect to="/my-site" />
+      <Route path="my-site" component={SectionWrapper}>
         <IndexRoute component={ResumeContainer} />
       </Route>
-      <Route path="/monotron" component={MonotronContainer} />
-      <Route path="*" component={HomePageContainer} />
     </Route>
   </Router>
 );

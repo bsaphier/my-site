@@ -4,7 +4,7 @@ const ChangeSection = ({ link }) => {
   return (
     <p className="scrolldown">
       <a className="smoothscroll" href={`#${link}`}>
-        replace this text
+        ABOUT ME
       </a>
     </p>
   );

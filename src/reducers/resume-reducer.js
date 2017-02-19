@@ -1,6 +1,6 @@
 const initialState = {
   navbar: {
-    root: '/resume',
+    root: '/my-site/',
     home: 'Home',
     about: 'About',
     work: 'Work',
@@ -11,7 +11,7 @@ const initialState = {
   work: { text: 'work' },
   basics: {
     name: 'Benjamin Saphier',
-    text: 'about'
+    text: 'My site is currently under construction. Come back soon!'
   },
   skills: { text: 'skills' },
   education: { text: 'education' },
