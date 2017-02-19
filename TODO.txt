@@ -16,7 +16,6 @@
 
 
 
-
 ~~~~~~~~~~~~~~~~~ monotron ~~~~~~~~~~~~~~~~~
 
 # as it is now, the monotron component needs the page to be refreshed for the UI to be displayed
