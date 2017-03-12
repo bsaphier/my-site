@@ -32,12 +32,12 @@ time, mark, audio, video {
 // }
 
 body {
-  background-color: $menu-dark;
+  // background-color: $menu-dark;
   -webkit-animation: hueShift 29s infinite linear;
+  background: $background-grad;
 }
 
 main {
-  background: $background-grad;
-  background-size: 162%;
+  // background-size: 162%;
   display: inline-block;
 }
