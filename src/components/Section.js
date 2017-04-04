@@ -7,7 +7,6 @@ const Header = (props) => {
     window: {
       width: '100vw',
       height: '100vh',
-      // paddingTop: '50px',
       position: 'relative'
     }
   };

@@ -64,22 +64,11 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// injectTapEventPlugin();
-	
-	// import getMuiTheme from 'material-ui/styles/getMuiTheme';
-	// import injectTapEventPlugin from 'react-tap-event-plugin';
-	// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-	// import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-	
-	(0, _reactDom.render)(
-	// <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-	_react2.default.createElement(
+	(0, _reactDom.render)(_react2.default.createElement(
 	  _reactRedux.Provider,
 	  { store: _store2.default },
 	  _react2.default.createElement(_Routes2.default, null)
-	),
-	// </MuiThemeProvider>,
-	document.getElementById('app'));
+	), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -24750,7 +24739,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(301);
+	__webpack_require__(303);
 	
 	var Routes = function Routes() {
 	  return _react2.default.createElement(
@@ -29771,6 +29760,7 @@
 	  return _react2.default.createElement(
 	    "div",
 	    { id: "outer-container" },
+	    _react2.default.createElement("div", { id: "background" }),
 	    _react2.default.createElement(
 	      "main",
 	      { id: "page-wrap", style: { fontFamily: '"Roboto", sans-serif' } },
@@ -29796,8 +29786,6 @@
 	var _react2 = _interopRequireDefault(_react);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 	
 	var SectionWrapper = function SectionWrapper(_ref) {
 	  var children = _ref.children,
@@ -29855,18 +29843,11 @@
 	
 	var _Banner2 = _interopRequireDefault(_Banner);
 	
-	var _Section = __webpack_require__(300);
+	var _Section = __webpack_require__(302);
 	
 	var _Section2 = _interopRequireDefault(_Section);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// import Navbar from './navbarComponents';
-	// import ChangeSection from './ChangeSection';
-	// import ResumeComponents from './resumeComponents';
-	
-	
-	// import Header from '../containers/Header';
 	
 	var Resume = function Resume(_ref) {
 	  var resume = _ref.resume;
@@ -29919,6 +29900,14 @@
 	
 	var _reactMotion = __webpack_require__(286);
 	
+	var _IconButton = __webpack_require__(300);
+	
+	var _IconButton2 = _interopRequireDefault(_IconButton);
+	
+	var _hoverSpinHOC = __webpack_require__(301);
+	
+	var _hoverSpinHOC2 = _interopRequireDefault(_hoverSpinHOC);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -29928,6 +29917,24 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var socialMedia = [{
+	  name: 'Github',
+	  icon: 'github-circled',
+	  url: 'https://www.github.com/bsaphier'
+	}, {
+	  name: 'LinkedIn',
+	  icon: 'linkedin',
+	  url: 'https://www.linkedin.com/in/bsaphier'
+	}, {
+	  name: 'Stack Overflow',
+	  icon: 'stackoverflow',
+	  url: 'http://stackoverflow.com/story/bsaphier'
+	}, {
+	  name: 'Angel List',
+	  icon: 'angellist',
+	  url: 'https://angel.co/bsaphier'
+	}];
 	
 	var styles = {
 	  banner: {
@@ -29939,13 +29946,23 @@
 	    height: '100%',
 	    paddingTop: 0
 	  },
+	  block: {
+	    top: '80%',
+	    height: '100%',
+	    overflow: 'hidden',
+	    position: 'relative'
+	  },
 	  cell: {
 	    position: 'absolute',
 	    top: '38%',
 	    left: '50%',
+	    willChange: 'transform',
+	
 	    WebkitTransform: 'translate(-50%, -50%)',
-	    transform: 'translate(-50%, -50%)',
-	    willChange: 'transform'
+	    MozTransform: 'translate(-50%, -50%)',
+	    MsTransform: 'translate(-50%, -50%)',
+	    OTransform: 'translate(-50%, -50%)',
+	    transform: 'translate(-50%, -50%)'
 	  },
 	  title: {
 	    display: 'flex',
@@ -29956,11 +29973,32 @@
 	    margin: '0 auto',
 	    display: 'inline-block',
 	    whiteSpace: 'pre',
+	    background: 'linear-gradient(to top right, rgb(255, 68, 62) 62%, rgb(252, 255, 88) 162%)',
+	
 	    WebkitTextFillColor: 'transparent',
-	    background: 'linear-gradient(to top right, rgb(255, 115, 50) 62%, rgb(252, 255, 88) 162%)',
-	    MozBackgroundClip: 'text',
+	    MozTextFillColor: 'transparent',
+	    MsTextFillColor: 'transparent',
+	    OTextFillColor: 'transparent',
+	
 	    WebkitBackgroundClip: 'text',
+	    MozBackgroundClip: 'text',
+	    MsBackgroundClip: 'text',
+	    OBackgroundClip: 'text',
 	    backgroundClip: 'text'
+	  },
+	  socialButton: {
+	    borderRadius: '25%',
+	    boxShadow: '-1px 8px 13px -3px rgba(0, 0, 0, 0.2)'
+	  },
+	  footer: {
+	    bottom: '0%',
+	    width: '100%',
+	    margin: '3em auto',
+	    textAlign: 'center',
+	    position: 'absolute',
+	    textTransform: 'uppercase',
+	    textShadow: '-1px 2px 3px rgba(0, 0, 0, 0.62)',
+	    color: 'rgba(255, 68, 62, 0.8)'
 	  }
 	};
 	
@@ -30000,12 +30038,22 @@
 	  }
 	};
 	
-	var Title = function Title(_ref) {
-	  var id = _ref.id,
-	      hover = _ref.hover,
-	      leave = _ref.leave,
-	      style = _ref.style,
-	      children = _ref.children;
+	var Block = function Block(_ref) {
+	  var children = _ref.children,
+	      style = _ref.style;
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'block', style: _extends({}, styles.block, style) },
+	    children
+	  );
+	};
+	
+	var Title = function Title(_ref2) {
+	  var id = _ref2.id,
+	      hover = _ref2.hover,
+	      leave = _ref2.leave,
+	      style = _ref2.style,
+	      children = _ref2.children;
 	  return _react2.default.createElement(
 	    'div',
 	    { style: styles.title },
@@ -30024,6 +30072,8 @@
 	    )
 	  );
 	};
+	
+	var SocialButton = (0, _hoverSpinHOC2.default)(_IconButton2.default);
 	
 	var Banner = function (_Component) {
 	  _inherits(Banner, _Component);
@@ -30053,7 +30103,8 @@
 	  }, {
 	    key: 'enterAnimate',
 	    value: function enterAnimate() {
-	      var nextState = { motion: {
+	      var nextState = {
+	        motion: {
 	          top: (0, _reactMotion.spring)(38, _reactMotion.presets.stiff),
 	          letterSpacing0: (0, _reactMotion.spring)(-0.055, _reactMotion.presets.gentle),
 	          letterSpacing1: (0, _reactMotion.spring)(0.175, _reactMotion.presets.gentle),
@@ -30081,9 +30132,21 @@
 	    value: function render() {
 	      var _this2 = this;
 	
+	      var socialButtons = socialMedia.map(function (link) {
+	        return _react2.default.createElement(SocialButton, {
+	          url: link.url,
+	          key: link.name,
+	          name: link.name,
+	          icon: link.icon,
+	          color: [255, 68, 62],
+	          initialColor: [45, 45, 45],
+	          style: styles.socialButton
+	        });
+	      });
+	
 	      return _react2.default.createElement(
 	        'div',
-	        { style: styles.banner },
+	        { className: 'banner', style: styles.banner },
 	        _react2.default.createElement(
 	          _reactMotion.Motion,
 	          { style: this.state.motion },
@@ -30230,19 +30293,14 @@
 	          }
 	        ),
 	        _react2.default.createElement(
+	          Block,
+	          { style: { height: '21%', textAlign: 'center' } },
+	          socialButtons
+	        ),
+	        _react2.default.createElement(
 	          'div',
 	          {
-	            style: {
-	              bottom: '0%',
-	              width: '100%',
-	              margin: '3em auto',
-	              textAlign: 'center',
-	              position: 'absolute',
-	              textTransform: 'uppercase',
-	              WebkitBackgroundClip: 'text',
-	              WebkitTextFillColor: 'transparent',
-	              backgroundImage: 'linear-gradient(to top right, rgba(255, 115, 50, 0.62) 62%, rgba(252, 255, 88, 0.62) 162%)'
-	            }
+	            style: styles.footer
 	          },
 	          _react2.default.createElement(
 	            'span',
@@ -31740,6 +31798,270 @@
 	  value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var styles = {
+	
+	  iconStyle: {
+	    width: '1.5em',
+	    height: '1.5em',
+	    lineHeight: '1.5em',
+	    borderRadius: '50%',
+	    color: 'rgb(255, 255, 255)',
+	    background: 'rgba(45, 45, 45, 1)',
+	
+	    /* -~- styling & comments from the fontello.com package -~- */
+	    fontFamily: 'fontello',
+	    fontStyle: 'normal',
+	    fontWeight: 'normal',
+	    speak: 'none',
+	
+	    display: 'block',
+	    textDecoration: 'inherit',
+	    // marginRight: '.2em',
+	    textAlign: 'center',
+	    // opacity: '0.8',
+	
+	    /* For safety - reset parent styles, that can break glyph codes*/
+	    fontVariant: 'normal',
+	    textTransform: 'none',
+	
+	    /* Animation center compensation - margins should be symmetric */
+	    /* remove if not needed */
+	    // marginLeft: '.2em',
+	
+	    /* you can be more comfortable with increased icons size */
+	    fontSize: '200%',
+	
+	    /* Font smoothing. That was taken from TWBS */
+	    WebkitFontSmoothing: 'antialiased',
+	    MozOsxFontSmoothing: 'grayscale'
+	
+	  }
+	};
+	
+	var IconButton = function IconButton(_ref) {
+	  var url = _ref.url,
+	      name = _ref.name,
+	      icon = _ref.icon,
+	      style = _ref.style,
+	      target = _ref.target;
+	
+	
+	  var iconStyle = _extends({}, styles.iconStyle, style);
+	
+	  return _react2.default.createElement(
+	    'a',
+	    {
+	      className: 'icon-button',
+	      title: name,
+	      href: url || null,
+	      target: target || '_blank'
+	    },
+	    _react2.default.createElement('i', { className: 'icon-' + icon, style: iconStyle })
+	  );
+	};
+	
+	exports.default = IconButton;
+
+/***/ },
+/* 301 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactMotion = __webpack_require__(286);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var styles = {
+	  content: {
+	    margin: '.3em 1.3em',
+	    display: 'inline-block'
+	  }
+	};
+	
+	//utility func for rgb values from floats
+	var int = function int(float) {
+	  return parseInt(float, 10);
+	};
+	
+	// the hoverSpin HOC takes two props: initialColor & hoverColor
+	// which are arrays of RGB values. If hoverColor is a nested array the
+	// color is rendered as a gradient –– only the first two arrays are used
+	var hoverSpin = function hoverSpin(Component) {
+	  return function (_React$Component) {
+	    _inherits(HoverSpin, _React$Component);
+	
+	    function HoverSpin(props) {
+	      _classCallCheck(this, HoverSpin);
+	
+	      var _this = _possibleConstructorReturn(this, (HoverSpin.__proto__ || Object.getPrototypeOf(HoverSpin)).call(this, props));
+	
+	      var _props$initialColor = _slicedToArray(props.initialColor, 3),
+	          red = _props$initialColor[0],
+	          green = _props$initialColor[1],
+	          blue = _props$initialColor[2];
+	
+	      var _props$color = _slicedToArray(props.color, 3),
+	          iconRed = _props$color[0],
+	          iconGreen = _props$color[1],
+	          iconBlue = _props$color[2];
+	
+	      _this.state = {
+	        red: red,
+	        blue: blue,
+	        green: green,
+	        iconRed: iconRed,
+	        iconGreen: iconGreen,
+	        iconBlue: iconBlue,
+	
+	        degree: 0
+	      };
+	
+	      _this.hover = _this.hover.bind(_this);
+	      _this.leave = _this.leave.bind(_this);
+	      return _this;
+	    }
+	
+	    _createClass(HoverSpin, [{
+	      key: 'hover',
+	      value: function hover() {
+	        var _props$initialColor2 = _slicedToArray(this.props.initialColor, 3),
+	            red = _props$initialColor2[0],
+	            green = _props$initialColor2[1],
+	            blue = _props$initialColor2[2];
+	
+	        var _props$color2 = _slicedToArray(this.props.color, 3),
+	            iconRed = _props$color2[0],
+	            iconGreen = _props$color2[1],
+	            iconBlue = _props$color2[2];
+	
+	        this.setState({
+	          red: (0, _reactMotion.spring)(iconRed),
+	          iconRed: (0, _reactMotion.spring)(red),
+	
+	          green: (0, _reactMotion.spring)(iconGreen),
+	          iconGreen: (0, _reactMotion.spring)(green),
+	
+	          blue: (0, _reactMotion.spring)(iconBlue),
+	          iconBlue: (0, _reactMotion.spring)(blue),
+	
+	          degree: (0, _reactMotion.spring)(360, _reactMotion.presets.wobbly)
+	        });
+	      }
+	    }, {
+	      key: 'leave',
+	      value: function leave() {
+	        var _props$initialColor3 = _slicedToArray(this.props.initialColor, 3),
+	            red = _props$initialColor3[0],
+	            green = _props$initialColor3[1],
+	            blue = _props$initialColor3[2];
+	
+	        var _props$color3 = _slicedToArray(this.props.color, 3),
+	            iconRed = _props$color3[0],
+	            iconGreen = _props$color3[1],
+	            iconBlue = _props$color3[2];
+	
+	        this.setState({
+	          red: (0, _reactMotion.spring)(red),
+	          iconRed: (0, _reactMotion.spring)(iconRed),
+	
+	          green: (0, _reactMotion.spring)(green),
+	          iconGreen: (0, _reactMotion.spring)(iconGreen),
+	
+	          blue: (0, _reactMotion.spring)(blue),
+	          iconBlue: (0, _reactMotion.spring)(iconBlue),
+	
+	          degree: (0, _reactMotion.spring)(0, _reactMotion.presets.wobbly)
+	        });
+	      }
+	    }, {
+	      key: 'render',
+	      value: function render() {
+	        var _this2 = this;
+	
+	        return _react2.default.createElement(
+	          'div',
+	          { className: 'hoverSpinHOC', style: styles.content },
+	          _react2.default.createElement(
+	            _reactMotion.Motion,
+	            { style: this.state },
+	            function (_ref) {
+	              var red = _ref.red,
+	                  blue = _ref.blue,
+	                  green = _ref.green,
+	                  degree = _ref.degree,
+	                  iconRed = _ref.iconRed,
+	                  iconBlue = _ref.iconBlue,
+	                  iconGreen = _ref.iconGreen;
+	              return _react2.default.createElement(
+	                'div',
+	                {
+	                  onMouseOver: _this2.hover,
+	                  onMouseOut: _this2.leave,
+	                  style: {
+	                    MozTransform: 'rotateY(' + degree + 'deg)',
+	                    WebkitTransform: 'rotateY(' + degree + 'deg)',
+	                    transform: 'rotateY(' + degree + 'deg)'
+	                  }
+	                },
+	                _react2.default.createElement(Component, _extends({}, _this2.props, {
+	                  style: _extends({}, _this2.props.style, {
+	                    background: 'rgb(' + int(red) + ', ' + int(green) + ', ' + int(blue) + ')',
+	                    color: 'rgb(' + int(iconRed) + ', ' + int(iconGreen) + ', ' + int(iconBlue) + ')',
+	                    border: '2.5px solid rgb(' + int(iconRed) + ', ' + int(iconGreen) + ', ' + int(iconBlue) + ')'
+	                  })
+	                }))
+	              );
+	            }
+	          )
+	        );
+	      }
+	    }]);
+	
+	    return HoverSpin;
+	  }(_react2.default.Component);
+	};
+	
+	exports.default = hoverSpin;
+
+/***/ },
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -31753,7 +32075,6 @@
 	    window: {
 	      width: '100vw',
 	      height: '100vh',
-	      // paddingTop: '50px',
 	      position: 'relative'
 	    }
 	  };
@@ -31768,16 +32089,16 @@
 	exports.default = (0, _reactRedux.connect)()(Header);
 
 /***/ },
-/* 301 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(302);
+	var content = __webpack_require__(304);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(303)(content, {});
+	var update = __webpack_require__(306)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -31794,21 +32115,77 @@
 	}
 
 /***/ },
-/* 302 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(304)();
+	exports = module.exports = __webpack_require__(305)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "/*~~~~~~~~~~~~~~ resume about ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume work ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume education ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume skills ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume portfolio ~~~~~~~~~~~~~~*/\n@keyframes gradwave {\n  0% {\n    background-position: 0% 50%; }\n  50% {\n    background-position: 100% 51%; }\n  100% {\n    background-position: 0% 50%; } }\n\n@keyframes hueShift {\n  0% {\n    -webkit-filter: hue-rotate(180deg); }\n  50% {\n    -webkit-filter: hue-rotate(0deg); }\n  100% {\n    -webkit-filter: hue-rotate(180deg); } }\n\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  background: transparent; }\n\nbody {\n  -webkit-animation: hueShift 29s infinite linear;\n  background: linear-gradient(to right top, #2d2d2d 62%, #515151 162%); }\n\nmain {\n  display: inline-block; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-family: 'Roboto', sans-serif; }\n\na {\n  color: inherit;\n  font-family: 'Roboto Condensed', sans-serif; }\n\np {\n  font-family: 'Roboto Condensed', sans-serif; }\n\n.menu-item {\n  font-family: 'Roboto', sans-serif; }\n\n/**\n * Basic typography style for copy text\n */\nh1 {\n  line-height: 42px; }\n\nh2 {\n  line-height: 36px; }\n\nh3 {\n  line-height: 30px; }\n\nh4 {\n  line-height: 30px; }\n\nh5 {\n  line-height: 30px; }\n\nh6 {\n  line-height: 30px; }\n\nh1, h2, h3, h4, h5, h6 {\n  margin: auto; }\n\na {\n  text-decoration: none; }\n\n.top {\n  z-index: 99;\n  position: relative; }\n\n.center {\n  text-align: center; }\n\n/*~~~~~~~~~~~~ ReactCSSTransitionGroup~~~~~~~~~~~~~*/\n.appear-enter {\n  transition-duration: 20s;\n  transition-property: opacity;\n  transition-timing-function: ease-out;\n  opacity: 0; }\n\n.appear-enter.appear-enter-active {\n  opacity: 1; }\n\n.appear-leave {\n  opacity: 0; }\n\n/*~~~~~~~~~~~~~~~~ Resume-Content ~~~~~~~~~~~~~~~~*/\n/* vertically center banner section */\n#work:before,\n#about:before,\n#skills:before,\n#contact:before,\n#education:before,\n#portfolio:before,\nheader:before {\n  content: '';\n  display: inline-block;\n  vertical-align: middle;\n  height: 100vh;\n  margin: 0 auto;\n  text-align: center; }\n\nheader .banner {\n  display: inline-block;\n  vertical-align: middle;\n  margin: 0 auto;\n  width: 62%;\n  padding-bottom: 30px;\n  text-align: center; }\n\nheader .banner-text {\n  width: 100%; }\n\nheader .banner-text h1 {\n  color: #fff;\n  margin: 0 auto 18px auto;\n  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);\n  -webkit-transition: all .3s ease-in-out;\n  -moz-transition: all .3s ease-in-out;\n  transition: all .3s ease-in-out; }\n\nheader .banner-text h1:hover {\n  color: #444FFF; }\n\nheader .banner-text h2 {\n  color: #fff;\n  margin: 0 auto 18px auto;\n  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);\n  -webkit-transition: all .3s ease-in-out;\n  -moz-transition: all .3s ease-in-out;\n  transition: all .3s ease-in-out; }\n\nheader .banner-text h2:hover {\n  color: #444FFF; }\n\n/* header social links */\n/* scrolldown link */\nheader .scrolldown a {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  margin-left: -29px;\n  color: #fff;\n  display: block;\n  height: 42px;\n  width: auto;\n  color: #fff;\n  border-radius: 100%;\n  -webkit-transition: all .3s ease-in-out;\n  -moz-transition: all .3s ease-in-out;\n  transition: all .3s ease-in-out; }\n\nheader .scrolldown a:hover {\n  color: #444FFF; }\n\n#about {\n  background: linear-gradient(to left bottom, #349, #237, 38%, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: bottom; }\n\n#work {\n  background: linear-gradient(to right bottom, #349, #444FFF, 38%, #CEE, #EEE);\n  background-size: 162%;\n  background-position: bottom; }\n\n#education {\n  background: linear-gradient(to left top, #444FFF, #349, 38%, #2a2a2a, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: top; }\n\n#skills {\n  background: linear-gradient(to right top, #349, #444FFF, 38%, #CEE, #EEE, #EFF);\n  background-size: 162%;\n  background-position: top; }\n\n#portfolio {\n  background: linear-gradient(to left top, #349, #237, 62%, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: auto; }\n\n#contact {\n  background: #191919;\n  background-size: 162%;\n  background-position: auto;\n  color: #636363; }\n\n#contact .section-head {\n  margin-bottom: 42px; }\n\nfooter {\n  padding-top: 48px;\n  margin-bottom: 48px;\n  color: #303030;\n  font-size: 14px;\n  text-align: center;\n  position: relative; }\n\nfooter a, footer a:visited {\n  color: #2a2a2a; }\n\nfooter a:hover, footer a:focus {\n  color: #444FFF; }\n\n#nav-wrap ul, #nav-wrap li, #nav-wrap a {\n  margin: 0;\n  padding: 0;\n  border: none;\n  outline: none; }\n\n/* nav-wrap */\n#nav-wrap {\n  font: 12px 'opensans-bold', sans-serif;\n  width: 100%;\n  text-transform: uppercase;\n  letter-spacing: 2.5px;\n  margin: 0 auto;\n  z-index: 999;\n  position: fixed;\n  left: 0;\n  top: 0; }\n\n.opaque {\n  background-color: rgba(13, 13, 13, 0.8); }\n\n/* hide toggle button */\n#nav-wrap > a.mobile-btn {\n  display: none; }\n\nul#nav {\n  min-height: 48px;\n  width: auto;\n  /* center align the menu */\n  text-align: center; }\n\nul#nav li {\n  position: relative;\n  list-style: none;\n  height: 48px;\n  display: inline-block; }\n\n/* Links */\nul#nav li a {\n  /* 8px padding top + 8px padding bottom + 32px line-height = 48px */\n  display: inline-block;\n  padding: 8px 13px;\n  line-height: 32px;\n  text-decoration: none;\n  text-align: left;\n  color: #444FFF;\n  -webkit-transition: color .2s ease-in-out;\n  -moz-transition: color .2s ease-in-out;\n  -ms-transition: color .2s ease-in-out;\n  transition: color .2s ease-in-out; }\n\nul#nav li a:active {\n  background-color: transparent !important; }\n\nul#nav li.current a {\n  color: #F06000; }\n\n.wavy--shit {\n  color: transparent;\n  background: linear-gradient(162deg, #9a5fba, #68099D, #ffff59);\n  background-size: 666% 666%;\n  -webkit-background-clip: text;\n  -webkit-animation: gradwave 13s ease infinite; }\n\n.wavy--border {\n  color: transparent;\n  border: 2.5px solid #ffff59;\n  border-radius: 4px;\n  line-height: 1.375;\n  padding: .75rem 1.5rem;\n  margin: .375rem;\n  -webkit-animation: hueShift 26s infinite linear; }\n  .wavy--border:hover {\n    color: #ffff59; }\n\n.shadow {\n  color: #444FFF;\n  text-shadow: 0.5px 0.5px 0px #2f0446, 1px 1px 0px #2f0446, 1.5px 1.5px 0px #1c0229;\n  transition: all 0.05s ease-out; }\n  .shadow:hover {\n    position: relative;\n    top: -1.8px;\n    left: -1.8px;\n    text-shadow: 0.5px 0.5px 0px #450a65, 1px 1px 0px #2f0446, 1.5px 1.5px 0px #1c0229, 2px 2px 0px #1c0229, 2.5px 2.5px 0px #0a0017, 3px 3px 0px #0a0017; }\n", ""]);
+	exports.push([module.id, "/*~~~~~~~~~~~~~~ resume about ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume work ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume education ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume skills ~~~~~~~~~~~~~~*/\n/*~~~~~~~~~~~~~~ resume portfolio ~~~~~~~~~~~~~~*/\n@keyframes gradwave {\n  0% {\n    background-position: 0% 50%; }\n  50% {\n    background-position: 100% 51%; }\n  100% {\n    background-position: 0% 50%; } }\n\n@keyframes hueShift {\n  0% {\n    -webkit-filter: hue-rotate(180deg); }\n  50% {\n    -webkit-filter: hue-rotate(0deg); }\n  100% {\n    -webkit-filter: hue-rotate(180deg); }\n  0% {\n    -moz-filter: hue-rotate(180deg); }\n  50% {\n    -moz-filter: hue-rotate(0deg); }\n  100% {\n    -moz-filter: hue-rotate(180deg); }\n  0% {\n    -ms-filter: hue-rotate(180deg); }\n  50% {\n    -ms-filter: hue-rotate(0deg); }\n  100% {\n    -ms-filter: hue-rotate(180deg); } }\n\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  background: transparent; }\n\nbody {\n  background: #2d2d2d;\n  -webkit-animation: hueShift 29s infinite linear; }\n\nmain {\n  display: inline-block; }\n\n#background {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\nh1, h2, h3, h4, h5, h6 {\n  font-family: 'Roboto', sans-serif; }\n\na {\n  color: inherit;\n  font-family: 'Roboto Condensed', sans-serif; }\n\np {\n  font-family: 'Roboto Condensed', sans-serif; }\n\n.menu-item {\n  font-family: 'Roboto', sans-serif; }\n\n/**\n * Basic typography style for copy text\n */\nh1 {\n  line-height: 42px; }\n\nh2 {\n  line-height: 36px; }\n\nh3 {\n  line-height: 30px; }\n\nh4 {\n  line-height: 30px; }\n\nh5 {\n  line-height: 30px; }\n\nh6 {\n  line-height: 30px; }\n\nh1, h2, h3, h4, h5, h6 {\n  margin: auto; }\n\na {\n  text-decoration: none; }\n\n.top {\n  z-index: 99;\n  position: relative; }\n\n.center {\n  text-align: center; }\n\n/*~~~~~~~~~~~~ ReactCSSTransitionGroup~~~~~~~~~~~~~*/\n.appear-enter {\n  transition-duration: 20s;\n  transition-property: opacity;\n  transition-timing-function: ease-out;\n  opacity: 0; }\n\n.appear-enter.appear-enter-active {\n  opacity: 1; }\n\n.appear-leave {\n  opacity: 0; }\n\n/*~~~~~~~~~~~~~~~~ Resume-Content ~~~~~~~~~~~~~~~~*/\n/* vertically center banner section */\n#work:before,\n#about:before,\n#skills:before,\n#contact:before,\n#education:before,\n#portfolio:before,\nheader:before {\n  content: '';\n  display: inline-block;\n  vertical-align: middle;\n  height: 100vh;\n  margin: 0 auto;\n  text-align: center; }\n\nheader .banner {\n  display: inline-block;\n  vertical-align: middle;\n  margin: 0 auto;\n  width: 62%;\n  padding-bottom: 30px;\n  text-align: center; }\n\nheader .banner-text {\n  width: 100%; }\n\nheader .banner-text h1 {\n  color: #fff;\n  margin: 0 auto 18px auto;\n  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);\n  -webkit-transition: all .3s ease-in-out;\n  -moz-transition: all .3s ease-in-out;\n  transition: all .3s ease-in-out; }\n\nheader .banner-text h1:hover {\n  color: #444FFF; }\n\nheader .banner-text h2 {\n  color: #fff;\n  margin: 0 auto 18px auto;\n  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);\n  -webkit-transition: all .3s ease-in-out;\n  -moz-transition: all .3s ease-in-out;\n  transition: all .3s ease-in-out; }\n\nheader .banner-text h2:hover {\n  color: #444FFF; }\n\n/* header social links */\n/* scrolldown link */\nheader .scrolldown a {\n  position: absolute;\n  bottom: 30px;\n  left: 50%;\n  margin-left: -29px;\n  color: #fff;\n  display: block;\n  height: 42px;\n  width: auto;\n  color: #fff;\n  border-radius: 100%;\n  -webkit-transition: all .3s ease-in-out;\n  -moz-transition: all .3s ease-in-out;\n  transition: all .3s ease-in-out; }\n\nheader .scrolldown a:hover {\n  color: #444FFF; }\n\n#about {\n  background: linear-gradient(to left bottom, #349, #237, 38%, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: bottom; }\n\n#work {\n  background: linear-gradient(to right bottom, #349, #444FFF, 38%, #CEE, #EEE);\n  background-size: 162%;\n  background-position: bottom; }\n\n#education {\n  background: linear-gradient(to left top, #444FFF, #349, 38%, #2d2d2d, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: top; }\n\n#skills {\n  background: linear-gradient(to right top, #349, #444FFF, 38%, #CEE, #EEE, #EFF);\n  background-size: 162%;\n  background-position: top; }\n\n#portfolio {\n  background: linear-gradient(to left top, #349, #237, 62%, rgba(13, 13, 13, 0.8));\n  background-size: 162%;\n  background-position: auto; }\n\n#contact {\n  background: #191919;\n  background-size: 162%;\n  background-position: auto;\n  color: #636363; }\n\n#contact .section-head {\n  margin-bottom: 42px; }\n\nfooter {\n  padding-top: 48px;\n  margin-bottom: 48px;\n  color: #303030;\n  font-size: 14px;\n  text-align: center;\n  position: relative; }\n\nfooter a, footer a:visited {\n  color: #2d2d2d; }\n\nfooter a:hover, footer a:focus {\n  color: #444FFF; }\n\n#nav-wrap ul, #nav-wrap li, #nav-wrap a {\n  margin: 0;\n  padding: 0;\n  border: none;\n  outline: none; }\n\n/* nav-wrap */\n#nav-wrap {\n  font: 12px 'opensans-bold', sans-serif;\n  width: 100%;\n  text-transform: uppercase;\n  letter-spacing: 2.5px;\n  margin: 0 auto;\n  z-index: 999;\n  position: fixed;\n  left: 0;\n  top: 0; }\n\n.opaque {\n  background-color: rgba(13, 13, 13, 0.8); }\n\n/* hide toggle button */\n#nav-wrap > a.mobile-btn {\n  display: none; }\n\nul#nav {\n  min-height: 48px;\n  width: auto;\n  /* center align the menu */\n  text-align: center; }\n\nul#nav li {\n  position: relative;\n  list-style: none;\n  height: 48px;\n  display: inline-block; }\n\n/* Links */\nul#nav li a {\n  /* 8px padding top + 8px padding bottom + 32px line-height = 48px */\n  display: inline-block;\n  padding: 8px 13px;\n  line-height: 32px;\n  text-decoration: none;\n  text-align: left;\n  color: #444FFF;\n  -webkit-transition: color .2s ease-in-out;\n  -moz-transition: color .2s ease-in-out;\n  -ms-transition: color .2s ease-in-out;\n  transition: color .2s ease-in-out; }\n\nul#nav li a:active {\n  background-color: transparent !important; }\n\nul#nav li.current a {\n  color: #F06000; }\n\n.wavy--shit {\n  color: transparent;\n  background: linear-gradient(162deg, #9a5fba, #68099D, #ffff59);\n  background-size: 666% 666%;\n  -webkit-background-clip: text;\n  -webkit-animation: gradwave 13s ease infinite; }\n\n.wavy--border {\n  color: transparent;\n  border: 2.5px solid #ffff59;\n  border-radius: 4px;\n  line-height: 1.375;\n  padding: .75rem 1.5rem;\n  margin: .375rem;\n  -webkit-animation: hueShift 26s infinite linear; }\n  .wavy--border:hover {\n    color: #ffff59; }\n\n.shadow {\n  color: #444FFF;\n  text-shadow: 0.5px 0.5px 0px #2f0446, 1px 1px 0px #2f0446, 1.5px 1.5px 0px #1c0229;\n  transition: all 0.05s ease-out; }\n  .shadow:hover {\n    position: relative;\n    top: -1.8px;\n    left: -1.8px;\n    text-shadow: 0.5px 0.5px 0px #450a65, 1px 1px 0px #2f0446, 1.5px 1.5px 0px #1c0229, 2px 2px 0px #1c0229, 2.5px 2.5px 0px #0a0017, 3px 3px 0px #0a0017; }\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 303 */
+/* 305 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+	
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+	
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -32057,62 +32434,6 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
-
-
-/***/ },
-/* 304 */
-/***/ function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-	
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-	
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
 
 
 /***/ }

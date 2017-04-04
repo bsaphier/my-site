@@ -1,12 +1,7 @@
 import React from 'react';
 
-// import Header from '../containers/Header';
-
 import Banner from './Banner';
 import Section from './Section';
-// import Navbar from './navbarComponents';
-// import ChangeSection from './ChangeSection';
-// import ResumeComponents from './resumeComponents';
 
 
 const Resume = ({ resume }) => {
