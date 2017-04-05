@@ -141,15 +141,12 @@ const Block = ({ children, style }) => (
 
 
 const Title = ({ id, hover, leave, style, children }) => (
-  <div style={styles.title}>
-    <span
-      onMouseOver={hover ? () => hover(id) : null}
-      onMouseLeave={leave ? () => leave(id) : null}
-      style={{
-        ...styles.text,
-        ...style
-      }}
+  <div
+    style={styles.title}
+    onMouseOver={hover ? () => hover(id) : null}
+    onMouseLeave={leave ? () => leave(id) : null}
     >
+    <span style={{ ...styles.text, ...style }}>
       { children }
     </span>
   </div>

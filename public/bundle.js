@@ -30056,18 +30056,18 @@
 	      children = _ref2.children;
 	  return _react2.default.createElement(
 	    'div',
-	    { style: styles.title },
+	    {
+	      style: styles.title,
+	      onMouseOver: hover ? function () {
+	        return hover(id);
+	      } : null,
+	      onMouseLeave: leave ? function () {
+	        return leave(id);
+	      } : null
+	    },
 	    _react2.default.createElement(
 	      'span',
-	      {
-	        onMouseOver: hover ? function () {
-	          return hover(id);
-	        } : null,
-	        onMouseLeave: leave ? function () {
-	          return leave(id);
-	        } : null,
-	        style: _extends({}, styles.text, style)
-	      },
+	      { style: _extends({}, styles.text, style) },
 	      children
 	    )
 	  );
