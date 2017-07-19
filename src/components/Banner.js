@@ -5,6 +5,18 @@ import IconButton from './IconButton';
 import hoverSpin from './hoverSpinHOC';
 
 
+const ROOT_IN_HZ = 220;
+const BLUES_STEPS = [ 1, (6 / 5), (4 / 3), (45 / 32), (3 / 2), (9 / 5), 2 ];
+
+
+function scaleFactory(scale, tonic) {
+  return scale.map( (step, idx) => ({
+    step: idx + 1,
+    noteInHz: tonic * step
+  }));
+}
+
+
 const socialMedia = [
   {
     name: 'Github',
@@ -140,10 +152,10 @@ const Block = ({ children, style }) => (
 );
 
 
-const Title = ({ id, hover, leave, style, children }) => (
+const Title = ({ id, sound, hover, leave, style, children }) => (
   <div
     style={styles.title}
-    onMouseOver={hover ? () => hover(id) : null}
+    onMouseOver={hover ? () => hover(id, sound) : null}
     onMouseLeave={leave ? () => leave(id) : null}
     >
     <span style={{ ...styles.text, ...style }}>
@@ -162,7 +174,8 @@ class Banner extends Component {
     super(props);
     this.state = {
       enter: false,
-      motion: motion.initial
+      motion: motion.initial,
+      musicScale: scaleFactory( BLUES_STEPS, ROOT_IN_HZ )
     };
     this.leave = this.leave.bind(this);
     this.hover = this.hover.bind(this);
@@ -194,8 +207,9 @@ class Banner extends Component {
   }
 
 
-  hover(id) {
+  hover(id, sound) {
     this.setState({ motion: { ...motion.enter, [id]: motion.exit[id] }});
+    this.props.playSound( sound );
   }
 
 
@@ -206,8 +220,7 @@ class Banner extends Component {
 
   render () {
 
-
-    const socialButtons = socialMedia.map( link =>
+    const socialButtons = socialMedia.map( link => (
       <SocialButton
         url={link.url}
         key={link.name}
@@ -217,7 +230,7 @@ class Banner extends Component {
         initialColor={[45, 45, 45]}
         style={styles.socialButton}
       />
-    );
+    ));
 
     return (
       <div className="banner" style={styles.banner}>
@@ -228,6 +241,7 @@ class Banner extends Component {
                 hover={this.hover}
                 leave={this.leave}
                 id="letterSpacing0"
+                sound={this.state.musicScale[0]}
                 style={{
                   fontWeight: 500,
                   fontSize: 'calc(3.8 * 4.275vmin)',
@@ -243,6 +257,7 @@ class Banner extends Component {
                 hover={this.hover}
                 leave={this.leave}
                 id="letterSpacing1"
+                sound={this.state.musicScale[2]}
                 style={{
                   fontWeight: 100,
                   fontSize: 'calc(3.8 * 1.6vmin)',
@@ -257,6 +272,7 @@ class Banner extends Component {
                 hover={this.hover}
                 leave={this.leave}
                 id="letterSpacing2"
+                sound={this.state.musicScale[1]}
                 style={{
                   fontWeight: 900,
                   fontSize: 'calc(3.8 * 6.89vmin)',
@@ -272,6 +288,7 @@ class Banner extends Component {
                 hover={this.hover}
                 leave={this.leave}
                 id="letterSpacing3"
+                sound={this.state.musicScale[2]}
                 style={{
                   fontWeight: 100,
                   fontSize: 'calc(3.8 * 3.5vmin)',
@@ -286,6 +303,7 @@ class Banner extends Component {
                 hover={this.hover}
                 leave={this.leave}
                 id="letterSpacing4"
+                sound={this.state.musicScale[3]}
                 style={{
                   fontWeight: 900,
                   fontSize: 'calc(3.8 * 1vmin)',
@@ -301,6 +319,7 @@ class Banner extends Component {
                 hover={this.hover}
                 leave={this.leave}
                 id="letterSpacing5"
+                sound={this.state.musicScale[4]}
                 style={{
                   fontWeight: 100,
                   fontSize: 'calc(3.8 * 1.91vmin)',
@@ -314,6 +333,7 @@ class Banner extends Component {
                 hover={this.hover}
                 leave={this.leave}
                 id="letterSpacing6"
+                sound={this.state.musicScale[5]}
                 style={{
                   fontWeight: 400,
                   fontSize: 'calc(3.8 * 1.3vmin)',
@@ -329,6 +349,7 @@ class Banner extends Component {
                 hover={this.hover}
                 leave={this.leave}
                 id="letterSpacing7"
+                sound={this.state.musicScale[6]}
                 style={{
                   fontWeight: 100,
                   fontSize: 'calc(3.8 * 2vmin)',

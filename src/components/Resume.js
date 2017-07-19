@@ -4,7 +4,7 @@ import Banner from './Banner';
 import Section from './Section';
 
 
-const Resume = ({ resume }) => {
+const Resume = ({ resume, ...props }) => {
   // return (
   //   <div>
   //     <Header id={ 'resume-home' }>
@@ -26,7 +26,7 @@ const Resume = ({ resume }) => {
   // );
   return (
     <Section>
-      <Banner />
+      <Banner {...props} />
     </Section>
   );
 };
