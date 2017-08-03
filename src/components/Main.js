@@ -1,17 +1,19 @@
-import { connect }                               from 'react-redux';
 import React, { Component }                      from 'react';
+import { connect }                               from 'react-redux';
 import { Motion, presets, spring }               from 'react-motion';
 import { actionCreators as audioActionCreators } from 'react-redux-webaudio';
 
-import hoverSpin                                 from './hoverSpinHOC';
-import IconButton                                from './IconButton';
 import '../stylesheets/main.scss';
+import IconButton                                from './IconButton';
+import hoverSpin                                 from './hoverSpinHOC';
+import { styles }                                from '../styles';
 
 
 const ROOT_IN_HZ = 220;
 
 const BLUES_STEPS = [ 1, (6 / 5), (4 / 3), (45 / 32), (3 / 2), (9 / 5), 2 ];
 
+/**********/
 
 class SineDing {
 
@@ -63,8 +65,9 @@ const playSound = note => dispatch => {
   dispatch( audioActionCreators.emit( sineDing ) );
 };
 
-
 /**********/
+
+
 const SocialButton = hoverSpin(IconButton);
 
 
@@ -92,81 +95,9 @@ const socialMedia = [
 ];
 
 
-const styles = {
-  window: {
-    width: '100vw',
-    height: '100vh',
-    position: 'relative'
-  },
-  banner: {
-    position: 'relative',
-    background: 'none',
-    textAlign: 'center',
-    color: 'rgba(255, 68, 62, 1)',
-    width: '100%',
-    height: '100%',
-    paddingTop: 0,
-  },
-  block: {
-    top: '80%',
-    height: '100%',
-    overflow: 'hidden',
-    position: 'relative'
-  },
-  cell: {
-    position: 'absolute',
-    top: '38%',
-    left: '50%',
-    willChange: 'transform',
-
-    WebkitTransform: 'translate(-50%, -50%)',
-    MozTransform: 'translate(-50%, -50%)',
-    MsTransform: 'translate(-50%, -50%)',
-    OTransform: 'translate(-50%, -50%)',
-    transform: 'translate(-50%, -50%)',
-  },
-  title: {
-    display: 'flex',
-    textAlign: 'justify',
-    textTransform: 'uppercase'
-  },
-  text: {
-    margin: '0 auto',
-    display: 'inline-block',
-    whiteSpace: 'pre',
-    background: 'linear-gradient(to top right, rgb(255, 68, 62) 62%, rgb(252, 255, 88) 162%)',
-
-    WebkitTextFillColor: 'transparent',
-    MozTextFillColor: 'transparent',
-    MsTextFillColor: 'transparent',
-    OTextFillColor: 'transparent',
-
-    WebkitBackgroundClip: 'text',
-    MozBackgroundClip: 'text',
-    MsBackgroundClip: 'text',
-    OBackgroundClip: 'text',
-    backgroundClip: 'text'
-  },
-  socialButton: {
-    borderRadius: '25%',
-    boxShadow: '-1px 8px 13px -3px rgba(0, 0, 0, 0.2)'
-  },
-  footer: {
-    bottom: '0%',
-    width: '100%',
-    margin: '3em auto',
-    textAlign: 'center',
-    position: 'absolute',
-    textTransform: 'uppercase',
-    textShadow: '-1px 2px 3px rgba(0, 0, 0, 0.62)',
-    color: 'rgba(255, 68, 62, 0.8)',
-  }
-};
-
-
 const motion = {
   initial: {
-    top: -38,
+    top: -50,
     letterSpacing0: 21,
     letterSpacing1: 13,
     letterSpacing2: 8,
@@ -177,7 +108,7 @@ const motion = {
     letterSpacing7: 1
   },
   exit: {
-    top: spring(-38, presets.stiff),
+    top: spring(-50, presets.stiff),
     letterSpacing0: spring(1, presets.wobbly),
     letterSpacing1: spring(1, presets.wobbly),
     letterSpacing2: spring(1, presets.wobbly),
@@ -188,7 +119,7 @@ const motion = {
     letterSpacing7: spring(1, presets.wobbly)
   },
   enter: {
-    top: spring(38, presets.stiff),
+    top: spring(45, presets.stiff),
     letterSpacing0: spring(-0.055, presets.wobbly),
     letterSpacing1: spring(0.175, presets.gentle),
     letterSpacing2: spring(-0.06, presets.wobbly),
@@ -235,18 +166,16 @@ class Banner extends Component {
     this.enterAnimate = this.enterAnimate.bind(this);
   }
 
-
   componentDidMount() {
     if (!this.state.enter) {
       this.enterAnimate();
     }
   }
 
-
   enterAnimate() {
     let nextState = {
       motion: {
-        top: spring(38, presets.stiff),
+        top: spring(45, presets.stiff),
         letterSpacing0: spring(-0.055, presets.gentle),
         letterSpacing1: spring(0.175, presets.gentle),
         letterSpacing2: spring(-0.06, presets.wobbly),
@@ -259,20 +188,16 @@ class Banner extends Component {
     this.setState({enter: true, ...nextState});
   }
 
-
   hover(id, sound) {
     this.setState({ motion: { ...motion.enter, [id]: motion.exit[id] }});
     this.props.playSound( sound );
   }
 
-
   leave(id) {
     this.setState({ motion: {...motion.enter, [id]: motion.enter[id] }});
   }
 
-
   render () {
-
     const socialButtons = socialMedia.map( link => (
       <SocialButton
         url={link.url}
@@ -286,157 +211,156 @@ class Banner extends Component {
     ));
 
     return (
-      <section style={styles.window}>
-        <div className="banner" style={styles.banner}>
-          <Motion style={this.state.motion}>
-            {(interpStyle) => (
-              <div id="cell" style={{...styles.cell, top: `${interpStyle.top}%`}}>
-                <Title
-                  hover={this.hover}
-                  leave={this.leave}
-                  id="letterSpacing0"
-                  sound={this.state.musicScale[0]}
-                  style={{
-                    fontWeight: 500,
-                    fontSize: 'calc(3.8 * 4.275vmin)',
-                    lineHeight: '0.7em',
-                    paddingTop: '0.06em',
-                    paddingRight: '0.1em',
-                    paddingLeft: '0.05em',
-                    letterSpacing: `${interpStyle.letterSpacing0}em`
-                  }}>
-                  Hello
-                </Title>
-                <Title
-                  hover={this.hover}
-                  leave={this.leave}
-                  id="letterSpacing1"
-                  sound={this.state.musicScale[2]}
-                  style={{
-                    fontWeight: 100,
-                    fontSize: 'calc(3.8 * 1.6vmin)',
-                    lineHeight: '0.8em',
-                    paddingTop: '0.06em',
-                    paddingLeft: '0.15em',
-                    letterSpacing: `${interpStyle.letterSpacing1}em`
-                  }}>
-                  My name is
-                </Title>
-                <Title
-                  hover={this.hover}
-                  leave={this.leave}
-                  id="letterSpacing2"
-                  sound={this.state.musicScale[1]}
-                  style={{
-                    fontWeight: 900,
-                    fontSize: 'calc(3.8 * 6.89vmin)',
-                    lineHeight: '0.7em',
-                    paddingTop: '0.03em',
-                    paddingRight: '0.06em',
-                    paddingBottom: '0.01em',
-                    letterSpacing: `${interpStyle.letterSpacing2}em`
-                  }}>
-                  <b style={{letterSpacing: `${interpStyle.letterSpacing2 - 0.035}em`}}>B</b>en
-                </Title>
-                <Title
-                  hover={this.hover}
-                  leave={this.leave}
-                  id="letterSpacing3"
-                  sound={this.state.musicScale[2]}
-                  style={{
-                    fontWeight: 100,
-                    fontSize: 'calc(3.8 * 3.5vmin)',
-                    fontStyle: 'italic',
-                    lineHeight: '0.8em',
-                    paddingRight: '0.1em',
-                    letterSpacing: `${interpStyle.letterSpacing3}em`
-                  }}>
-                  Saphier
-                </Title>
-                <Title
-                  hover={this.hover}
-                  leave={this.leave}
-                  id="letterSpacing4"
-                  sound={this.state.musicScale[3]}
-                  style={{
-                    fontWeight: 900,
-                    fontSize: 'calc(3.8 * 1vmin)',
-                    lineHeight: '0.9em',
-                    wordSpacing: '-0.05em',
-                    paddingTop: '0.07em',
-                    paddingRight: '0.103em',
-                    letterSpacing: `${interpStyle.letterSpacing4}em`
-                  }}>
-                  I'm a software engineer
-                </Title>
-                <Title
-                  hover={this.hover}
-                  leave={this.leave}
-                  id="letterSpacing5"
-                  sound={this.state.musicScale[4]}
-                  style={{
-                    fontWeight: 100,
-                    fontSize: 'calc(3.8 * 1.91vmin)',
-                    lineHeight: '0.9em',
-                    paddingRight: '0.175em',
-                    letterSpacing: `${interpStyle.letterSpacing5}em`
-                  }}>
-                  Exploring the
-                </Title>
-                <Title
-                  hover={this.hover}
-                  leave={this.leave}
-                  id="letterSpacing6"
-                  sound={this.state.musicScale[5]}
-                  style={{
-                    fontWeight: 400,
-                    fontSize: 'calc(3.8 * 1.3vmin)',
-                    lineHeight: '0.7em',
-                    paddingTop: '0.08em',
-                    paddingRight: '0.13em',
-                    paddingBottom: '0.03em',
-                    letterSpacing: `${interpStyle.letterSpacing6}em`
-                  }}>
-                  crossover between
-                </Title>
-                <Title
-                  hover={this.hover}
-                  leave={this.leave}
-                  id="letterSpacing7"
-                  sound={this.state.musicScale[6]}
-                  style={{
-                    fontWeight: 100,
-                    fontSize: 'calc(3.8 * 2vmin)',
-                    lineHeight: '1em',
-                    paddingRight: '0.2em',
-                    letterSpacing: `${interpStyle.letterSpacing7}em`
-                  }}>
-                  Sound & Code
-                </Title>
+      <main style={styles.main}>
+        <section style={styles.window}>
+          <div className="banner" style={styles.banner}>
+            <div>
+              <Motion style={this.state.motion}>
+                {(interpStyle) => (
+                  <div id="cell" style={{...styles.cell, top: `${interpStyle.top}%`}}>
+                    <Title
+                      hover={this.hover}
+                      leave={this.leave}
+                      id="letterSpacing0"
+                      sound={this.state.musicScale[0]}
+                      style={{
+                        fontWeight: 500,
+                        fontSize: 'calc(2 * 4.275em)',
+                        lineHeight: '0.7em',
+                        paddingTop: '0.06em',
+                        paddingRight: '0.1em',
+                        paddingLeft: '0.05em',
+                        letterSpacing: `${interpStyle.letterSpacing0}em`
+                      }}>
+                      Hello
+                    </Title>
+                    <Title
+                      hover={this.hover}
+                      leave={this.leave}
+                      id="letterSpacing1"
+                      sound={this.state.musicScale[2]}
+                      style={{
+                        fontWeight: 100,
+                        fontSize: 'calc(2 * 1.6em)',
+                        lineHeight: '0.8em',
+                        paddingTop: '0.06em',
+                        paddingLeft: '0.15em',
+                        letterSpacing: `${interpStyle.letterSpacing1}em`
+                      }}>
+                      My name is
+                    </Title>
+                    <Title
+                      hover={this.hover}
+                      leave={this.leave}
+                      id="letterSpacing2"
+                      sound={this.state.musicScale[1]}
+                      style={{
+                        fontWeight: 900,
+                        fontSize: 'calc(2 * 6.89em)',
+                        lineHeight: '0.7em',
+                        paddingTop: '0.03em',
+                        paddingRight: '0.06em',
+                        paddingBottom: '0.01em',
+                        letterSpacing: `${interpStyle.letterSpacing2}em`
+                      }}>
+                      <b style={{letterSpacing: `${interpStyle.letterSpacing2 - 0.035}em`}}>B</b>en
+                    </Title>
+                    <Title
+                      hover={this.hover}
+                      leave={this.leave}
+                      id="letterSpacing3"
+                      sound={this.state.musicScale[2]}
+                      style={{
+                        fontWeight: 100,
+                        fontSize: 'calc(2 * 3.5em)',
+                        fontStyle: 'italic',
+                        lineHeight: '0.8em',
+                        paddingRight: '0.1em',
+                        letterSpacing: `${interpStyle.letterSpacing3}em`
+                      }}>
+                      Saphier
+                    </Title>
+                    <Title
+                      hover={this.hover}
+                      leave={this.leave}
+                      id="letterSpacing4"
+                      sound={this.state.musicScale[3]}
+                      style={{
+                        fontWeight: 900,
+                        fontSize: 'calc(2 * 1em)',
+                        lineHeight: '0.9em',
+                        wordSpacing: '-0.05em',
+                        paddingTop: '0.07em',
+                        paddingRight: '0.103em',
+                        letterSpacing: `${interpStyle.letterSpacing4}em`
+                      }}>
+                      I'm a software engineer
+                    </Title>
+                    <Title
+                      hover={this.hover}
+                      leave={this.leave}
+                      id="letterSpacing5"
+                      sound={this.state.musicScale[4]}
+                      style={{
+                        fontWeight: 100,
+                        fontSize: 'calc(2 * 1.91em)',
+                        lineHeight: '0.9em',
+                        paddingRight: '0.175em',
+                        letterSpacing: `${interpStyle.letterSpacing5}em`
+                      }}>
+                      Exploring the
+                    </Title>
+                    <Title
+                      hover={this.hover}
+                      leave={this.leave}
+                      id="letterSpacing6"
+                      sound={this.state.musicScale[5]}
+                      style={{
+                        fontWeight: 400,
+                        fontSize: 'calc(2 * 1.3em)',
+                        lineHeight: '0.7em',
+                        paddingTop: '0.08em',
+                        paddingRight: '0.13em',
+                        paddingBottom: '0.03em',
+                        letterSpacing: `${interpStyle.letterSpacing6}em`
+                      }}>
+                      crossover between
+                    </Title>
+                    <Title
+                      hover={this.hover}
+                      leave={this.leave}
+                      id="letterSpacing7"
+                      sound={this.state.musicScale[6]}
+                      style={{
+                        fontWeight: 100,
+                        fontSize: 'calc(2 * 2em)',
+                        lineHeight: '1em',
+                        paddingRight: '0.2em',
+                        letterSpacing: `${interpStyle.letterSpacing7}em`
+                      }}>
+                      Sound & Code
+                    </Title>
+                  </div>
+                )}
+              </Motion>
+
+              <Block>
+                { socialButtons }
+              </Block>
+
+              <div className="footer" style={styles.footer}>
+                  <span>. . . And I'm still working on my website</span>
               </div>
-            )}
-          </Motion>
-
-          <Block style={{height: '21%', textAlign: 'center'}}>
-            { socialButtons }
-          </Block>
-
-          <div
-            style={styles.footer}
-            >
-              <span>. . . And I'm still working on my website</span>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
     );
   }
 }
 
 
-const mapStateToProps = ({ resume }) => {
-  return { resume };
-};
-
+const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
   playSound: (note) => dispatch( playSound(note) )

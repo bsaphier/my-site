@@ -16,30 +16,14 @@ const styles = {
     fontStyle: 'normal',
     fontWeight: 'normal',
     speak: 'none',
-
     display: 'block',
     textDecoration: 'inherit',
-    // marginRight: '.2em',
     textAlign: 'center',
-    // opacity: '0.8',
-
-    /* For safety - reset parent styles, that can break glyph codes*/
     fontVariant: 'normal',
     textTransform: 'none',
-
-    /* Animation center compensation - margins should be symmetric */
-    /* remove if not needed */
-    // marginLeft: '.2em',
-
-    /* you can be more comfortable with increased icons size */
     fontSize: '200%',
-
-    /* Font smoothing. That was taken from TWBS */
     WebkitFontSmoothing: 'antialiased',
     MozOsxFontSmoothing: 'grayscale',
-
-    /* Uncomment for 3D effect */
-    // textShadow: '1px 1px 1px rgba(81, 81, 81, 0.3)'
   }
 };
 

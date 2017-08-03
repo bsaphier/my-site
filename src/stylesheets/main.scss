@@ -1,12 +1,23 @@
 @charset 'UTF-8';
 
-@import './variables.scss';
-
-@keyframes gradwave {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 51%}
-    100%{background-position:0% 50%}
+@mixin small {
+  @media screen and (max-width: 799px) {
+    @content;
+  }
 }
+
+@mixin medium {
+  @media screen and (max-width: 1299px) and (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: 1300px) {
+    @content;
+  }
+}
+
 
 @keyframes hueShift {
   0% {-webkit-filter: hue-rotate(180deg)}
@@ -22,15 +33,59 @@
   100% {-ms-filter: hue-rotate(180deg)}
 }
 
-body {
-  background: $menu-dark;
-  -webkit-animation: hueShift 29s infinite linear;
+html {
+  @include small {
+    font-size: 12px;
+  }
+  @include medium {
+    font-size: 14px;
+  }
+  @include large {
+    font-size: 16px;
+  }
 }
 
-main {
-  display: inline-block;
+body {
+  background: rgba(45, 45, 45, 1);
+  -webkit-animation: hueShift 29s infinite linear;
 }
 
 a {
   text-decoration: none;
+}
+
+.block {
+  right: 50%;
+  top: 85%;
+  font-size: 100%;
+  justify-content: space-between;
+  @include small {
+    top: 40px;
+    right: 40px;
+    height: 38%;
+    flex-direction: column;
+  }
+  @include medium {
+    top: 40px;
+    right: 40px;
+    height: 38%;
+    flex-direction: column;
+  }
+  @include large {
+    width: 362px;
+    transform: translate(50%, 0);
+  }
+}
+
+.footer {
+  @include small {
+    font-size: 125%;
+    bottom: 5rem;
+  }
+  @include medium {
+    bottom: 1rem;
+  }
+  @include large {
+    bottom: 1rem;
+  }
 }
