@@ -1,17 +1,21 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 import { RRWAEngine } from 'react-redux-webaudio';
+import { Provider } from 'react-redux';
+import { render } from 'react-dom';
 
-import store from './store';
-import Routes from './Routes';
+import Main from './components/Main';
+import rootReducer from './root-reducer';
 
+
+let store = createStore( rootReducer, applyMiddleware(thunkMiddleware) );
 
 render(
   <Provider store={store}>
     <div>
       <RRWAEngine />
-      <Routes />
+      <Main />
     </div>
   </Provider>,
   document.getElementById('app')

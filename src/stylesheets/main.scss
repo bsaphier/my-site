@@ -1,28 +1,91 @@
 @charset 'UTF-8';
-// --------------------------------------
-// import in the following order
-// --------------------------------------
-// 1. Configuration and helpers - abstracts
-// 2. Vendors - vendor
-// 3. Base stuff - base
-// 4. Layout-related sections - layout
-// 5. Components - components
-// 6. Page-specific styles - pages
-// 7. Themes - themes
 
-@import 'abstracts/all';
+@mixin small {
+  @media screen and (max-width: 799px) {
+    @content;
+  }
+}
 
-// @import 'vendor/all';
+@mixin medium {
+  @media screen and (max-width: 1299px) and (min-width: 800px) {
+    @content;
+  }
+}
 
-@import 'base/all';
+@mixin large {
+  @media screen and (min-width: 1300px) {
+    @content;
+  }
+}
 
-@import 'layout/all';
 
-// @import 'components/all';
+@keyframes hueShift {
+  0% {-webkit-filter: hue-rotate(180deg)}
+  50% {-webkit-filter: hue-rotate(0deg)}
+  100% {-webkit-filter: hue-rotate(180deg)}
 
-// @import 'pages/all';
+  0% {-moz-filter: hue-rotate(180deg)}
+  50% {-moz-filter: hue-rotate(0deg)}
+  100% {-moz-filter: hue-rotate(180deg)}
 
-// @import 'themes/all';
+  0% {-ms-filter: hue-rotate(180deg)}
+  50% {-ms-filter: hue-rotate(0deg)}
+  100% {-ms-filter: hue-rotate(180deg)}
+}
 
-// import the temporary *~shame~* stylesheets which should be reorganised
-@import '/shame';
+html {
+  @include small {
+    font-size: 12px;
+  }
+  @include medium {
+    font-size: 14px;
+  }
+  @include large {
+    font-size: 16px;
+  }
+}
+
+body {
+  background: rgba(45, 45, 45, 1);
+  -webkit-animation: hueShift 29s infinite linear;
+}
+
+a {
+  text-decoration: none;
+}
+
+.block {
+  right: 50%;
+  top: 85%;
+  font-size: 100%;
+  justify-content: space-between;
+  @include small {
+    top: 40px;
+    right: 40px;
+    height: 38%;
+    flex-direction: column;
+  }
+  @include medium {
+    top: 40px;
+    right: 40px;
+    height: 38%;
+    flex-direction: column;
+  }
+  @include large {
+    width: 362px;
+    transform: translate(50%, 0);
+  }
+}
+
+.footer {
+  @include small {
+    font-size: 125%;
+    bottom: 5rem;
+  }
+  @include medium {
+    bottom: 1rem;
+  }
+  @include large {
+    bottom: 1rem;
+  }
+}

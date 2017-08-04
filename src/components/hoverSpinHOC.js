@@ -4,7 +4,7 @@ import { Motion, presets, spring } from 'react-motion';
 
 const styles = {
   content: {
-    margin: '.3em 1.3em',
+    // margin: '.3em 1.3em',
     display: 'inline-block',
   }
 };
@@ -111,7 +111,7 @@ const hoverSpin = (Component) => {
                     ...this.props.style,
                     background: `rgb(${int(red)}, ${int(green)}, ${int(blue)})`,
                     color: `rgb(${int(iconRed)}, ${int(iconGreen)}, ${int(iconBlue)})`,
-                    border: `2.5px solid rgb(${int(iconRed)}, ${int(iconGreen)}, ${int(iconBlue)})`,
+                    border: `2px solid rgb(${int(iconRed)}, ${int(iconGreen)}, ${int(iconBlue)})`,
                   }}
                 />
               </div>
