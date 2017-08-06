@@ -9,11 +9,16 @@ import hoverSpin                                 from './hoverSpinHOC';
 import { styles }                                from '../styles';
 
 
-const ROOT_IN_HZ = 220;
+/**~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~**/
+
+const ROOT_IN_HZ = 440;
 
 const BLUES_STEPS = [ 1, (6 / 5), (4 / 3), (45 / 32), (3 / 2), (9 / 5), 2 ];
 
-/**********/
+/**~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~**/
+
+
+/********************************************************/
 
 class SineDing {
 
@@ -23,11 +28,17 @@ class SineDing {
 
   setup() {
     this.oscillator = this.context.createOscillator();
+    this.filter = this.context.createBiquadFilter();
     this.gainNode = this.context.createGain();
 
-    this.oscillator.connect(this.gainNode);
+    this.oscillator.connect(this.filter);
+    this.filter.connect(this.gainNode);
     this.gainNode.connect(this.context.destination);
+
     this.oscillator.type = 'sine';
+    this.filter.type = 'bandpass';
+    this.filter.frequency.value = 1600;
+    this.filter.Q.value = 1.5;
   }
 
   play(value) {
@@ -41,8 +52,18 @@ class SineDing {
   }
 
   stop() {
-    this.gainNode.gain.exponentialRampToValueAtTime(0.001, this.context.currentTime + 1);
-    this.oscillator.stop(this.context.currentTime + 3);
+    this.gainNode.gain.exponentialRampToValueAtTime(0.0001, this.context.currentTime + 0.3);
+    this.oscillator.stop(this.context.currentTime + 0.301);
+  }
+
+  kill() {
+    for (let i in this) {
+      if (this.hasOwnProperty(i)) {
+        this[i] = undefined;
+      } else if (this.prototype.hasOwnProperty(i)) {
+        this.prototype[i] = undefined;
+      }
+    }
   }
 
 }
@@ -55,17 +76,14 @@ const scaleFactory = (scale, tonic) => {
 };
 
 const soundEvent = ({ noteInHz }) => aCtx => {
-  let sound = new SineDing( aCtx );
-  sound.play(noteInHz);
-  sound.stop();
-};
+    let sound = new SineDing( aCtx );
+    sound.play(noteInHz);
+    sound.stop();
+    sound.kill();
+    sound = undefined;
+  };
 
-const playSound = note => dispatch => {
-  let sineDing = soundEvent( note );
-  dispatch( audioActionCreators.emit( sineDing ) );
-};
-
-/**********/
+/********************************************************/
 
 
 const SocialButton = hoverSpin(IconButton);
@@ -139,18 +157,25 @@ const Block = ({ children, style }) => (
 );
 
 
-const Title = ({ id, sound, hover, leave, style, children }) => (
+const Title = ({ id, note, hover, leave, style, children }) => (
   <div
     style={styles.title}
-    onTouchStart={hover ? (evt) => {
+    onTouchStart={hover ? () => {
+      hover(id, note);
+    } : null}
+    onTouchMove={leave ? (evt) => {
       evt.preventDefault();
-      hover(id, sound);
+      leave(id);
+    } : null}
+    onTouchCancel={leave ? (evt) => {
+      evt.preventDefault();
+      leave(id);
     } : null}
     onTouchEnd={leave ? (evt) => {
       evt.preventDefault();
       leave(id);
     } : null}
-    onMouseOver={hover ? () => hover(id, sound) : null}
+    onMouseOver={hover ? () => hover(id, note) : null}
     onMouseLeave={leave ? () => leave(id) : null}
     >
     <span style={{ ...styles.text, ...style }}>
@@ -196,9 +221,9 @@ class Banner extends Component {
     this.setState({enter: true, ...nextState});
   }
 
-  hover(id, sound) {
+  hover(id, note) {
     this.setState({ motion: { ...motion.enter, [id]: motion.exit[id] }});
-    this.props.playSound( sound );
+    this.props.playSound( note );
   }
 
   leave(id) {
@@ -230,7 +255,7 @@ class Banner extends Component {
                       hover={this.hover}
                       leave={this.leave}
                       id="letterSpacing0"
-                      sound={this.state.musicScale[0]}
+                      note={this.state.musicScale[0]}
                       style={{
                         fontWeight: 500,
                         fontSize: 'calc(2 * 4.275em)',
@@ -246,7 +271,7 @@ class Banner extends Component {
                       hover={this.hover}
                       leave={this.leave}
                       id="letterSpacing1"
-                      sound={this.state.musicScale[2]}
+                      note={this.state.musicScale[2]}
                       style={{
                         fontWeight: 100,
                         fontSize: 'calc(2 * 1.6em)',
@@ -261,7 +286,7 @@ class Banner extends Component {
                       hover={this.hover}
                       leave={this.leave}
                       id="letterSpacing2"
-                      sound={this.state.musicScale[1]}
+                      note={this.state.musicScale[1]}
                       style={{
                         fontWeight: 900,
                         fontSize: 'calc(2 * 6.89em)',
@@ -277,7 +302,7 @@ class Banner extends Component {
                       hover={this.hover}
                       leave={this.leave}
                       id="letterSpacing3"
-                      sound={this.state.musicScale[2]}
+                      note={this.state.musicScale[2]}
                       style={{
                         fontWeight: 100,
                         fontSize: 'calc(2 * 3.5em)',
@@ -292,7 +317,7 @@ class Banner extends Component {
                       hover={this.hover}
                       leave={this.leave}
                       id="letterSpacing4"
-                      sound={this.state.musicScale[3]}
+                      note={this.state.musicScale[3]}
                       style={{
                         fontWeight: 900,
                         fontSize: 'calc(2 * 1em)',
@@ -308,7 +333,7 @@ class Banner extends Component {
                       hover={this.hover}
                       leave={this.leave}
                       id="letterSpacing5"
-                      sound={this.state.musicScale[4]}
+                      note={this.state.musicScale[4]}
                       style={{
                         fontWeight: 100,
                         fontSize: 'calc(2 * 1.91em)',
@@ -322,7 +347,7 @@ class Banner extends Component {
                       hover={this.hover}
                       leave={this.leave}
                       id="letterSpacing6"
-                      sound={this.state.musicScale[5]}
+                      note={this.state.musicScale[5]}
                       style={{
                         fontWeight: 400,
                         fontSize: 'calc(2 * 1.3em)',
@@ -338,7 +363,7 @@ class Banner extends Component {
                       hover={this.hover}
                       leave={this.leave}
                       id="letterSpacing7"
-                      sound={this.state.musicScale[6]}
+                      note={this.state.musicScale[6]}
                       style={{
                         fontWeight: 100,
                         fontSize: 'calc(2 * 2em)',
@@ -368,10 +393,19 @@ class Banner extends Component {
 }
 
 
+/********************* Thunk-Action *********************/
+
+const playSound = note => dispatch => {
+  let sineDing = soundEvent( note );
+  dispatch( audioActionCreators.emit( sineDing ) );
+};
+
+/********************************************************/
+
 const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
-  playSound: (note) => dispatch( playSound(note) )
+  playSound: (note) => dispatch( playSound(note) ),
 });
 
 
