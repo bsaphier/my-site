@@ -42,7 +42,7 @@ class SineDing {
 
   stop() {
     this.gainNode.gain.exponentialRampToValueAtTime(0.001, this.context.currentTime + 1);
-    this.oscillator.stop(this.context.currentTime + 1);
+    this.oscillator.stop(this.context.currentTime + 3);
   }
 
 }
@@ -142,6 +142,14 @@ const Block = ({ children, style }) => (
 const Title = ({ id, sound, hover, leave, style, children }) => (
   <div
     style={styles.title}
+    onTouchStart={hover ? (evt) => {
+      evt.preventDefault();
+      hover(id, sound);
+    } : null}
+    onTouchEnd={leave ? (evt) => {
+      evt.preventDefault();
+      leave(id);
+    } : null}
     onMouseOver={hover ? () => hover(id, sound) : null}
     onMouseLeave={leave ? () => leave(id) : null}
     >

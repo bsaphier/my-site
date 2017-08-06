@@ -97,7 +97,7 @@ const hoverSpin = (Component) => {
               iconGreen
             }) => (
               <div
-                onTouchStart={this.hover}
+                onTouchMove={this.hover}
                 onTouchEnd={this.leave}
                 onMouseOver={this.hover}
                 onMouseOut={this.leave}

@@ -1,27 +1,57 @@
 @charset 'UTF-8';
 
-@mixin small {
-  @media screen and (max-width: 799px) {
+@mixin xs {
+  @media screen and (max-width: 499px) {
     @content;
   }
 }
 
-@mixin medium {
-  @media screen and (max-width: 1299px) and (min-width: 800px) {
+@mixin xs-thin {
+  @media screen and (max-width: 499px) and (max-height: 309px) {
     @content;
   }
 }
 
-@mixin large {
+@mixin sm {
+  @media screen and (max-width: 899px) and (min-width: 500px) {
+    @content;
+  }
+}
+
+@mixin sm-thin {
+  @media screen and (max-width: 899px) and (min-width: 500px) and (max-height: 450px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: 1299px) and (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin md-thin {
+  @media screen and (max-width: 1299px) and (min-width: 900px) and (max-height: 675px) {
+    @content;
+  }
+}
+
+@mixin lg {
   @media screen and (min-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin lg-thin {
+  @media screen and (min-width: 1300px) and (max-height: 699px) {
     @content;
   }
 }
 
 @mixin mobile-portrait {
   @media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 667px)
+  and (min-device-width: 299px)
+  and (max-device-width: 749px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
     @content;
@@ -30,8 +60,8 @@
 
 @mixin mobile-landscape {
   @media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 667px)
+  and (min-device-width: 299px)
+  and (max-device-width: 749px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
     @content;
@@ -54,21 +84,33 @@
 }
 
 html {
-  @include small {
+  @include xs {
+    font-size: 8px;
+  }
+  @include xs-thin {
+    font-size: 4px;
+  }
+  @include sm {
     font-size: 12px;
   }
-  @include medium {
-    font-size: 14px;
+  @include sm-thin {
+    font-size: 8px;
   }
-  @include large {
-    font-size: 16px;
+  @include md {
+    font-size: 15px;
   }
-  @include mobile-portrait {
+  @include md-thin {
     font-size: 10px;
   }
-  @include mobile-landscape {
+  @include lg {
+    font-size: 16px;
+  }
+  @include lg-thin {
     font-size: 12px;
   }
+  @include mobile-portrait {
+    font-size: 24px;
+  };
 }
 
 body {
@@ -85,47 +127,93 @@ a {
   top: 85%;
   font-size: 100%;
   justify-content: space-between;
-  @include small {
-    top: 40px;
-    right: 40px;
-    height: 38%;
+  @include xs {
+    top: 20px;
+    right: 20px;
+    height: 80%;
     flex-direction: column;
   }
-  @include medium {
-    top: 40px;
+  @include xs-thin {
+    top: 0px;
+    font-size: 200%;
+  }
+  @include sm {
+    top: 20px;
     right: 40px;
-    height: 38%;
+    height: 62%;
+    font-size: 162%;
     flex-direction: column;
   }
-  @include large {
+  @include sm-thin {
+    top: 10px;
+  }
+  @include md {
+    width: 339px;
+    transform: translate(50%, 0);
+  }
+  @include md-thin {
+    width: auto;
+    top: 20px;
+    right: 40px;
+    height: 62%;
+    flex-direction: column;
+    transform: none;
+    font-size: 162%;
+  }
+  @include lg {
     width: 362px;
     transform: translate(50%, 0);
   }
-  @include mobile-portrait {
-    top: 20px;
-    right: 20%;
-    left: 20%;
-
-    height: 33%;
-    font-size: 138%;
-    flex-direction: row;
-    justify-content: space-between;
+  @include lg-thin {
+    top: 40px;
+    right: 40px;
+    height: 62%;
+    width: auto;
+    transform: none;
+    font-size: 162%;
+    flex-direction: column;
   }
+  @include mobile-portrait {
+    top: 80px;
+    width: 555px;
+    font-size: 150%;
+    transform: translate(50%, 0);
+  };
 }
 
 .footer {
   bottom: 1rem;
-  @include small {
+  @include xs {
+    right: 20px;
+    bottom: 20px;
+    width: auto !important;
+    font-size: 200%;
+  }
+  @include xs-thin {
+    bottom: 10px;
+  }
+  @include sm {
+    right: 40px;
+    bottom: 2rem;
+    width: auto !important;
     font-size: 125%;
-    bottom: 5rem;
   }
-  @include medium {
+  @include sm-thin {
+    font-size: 150%;
+  };
+  @include md-thin {
+    right: 40px;
+    width: auto !important;
+    font-size: 150%;
   }
-  @include large {
+  @include lg-thin {
+    right: 40px;
+    width: auto !important;
+    font-size: 125%;
   }
   @include mobile-portrait {
-    font-size: 175%;
-    bottom: 0.05rem;
-    letter-spacing: -0.01rem;
+    bottom: 2rem;
+    font-size: 120%;
+    letter-spacing: -0.02rem
   };
 }

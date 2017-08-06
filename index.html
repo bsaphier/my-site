@@ -18,5 +18,73 @@
   </head>
   <body>
     <div id="app"></div>
+    <!-- <div id="test"></div> -->
   </body>
+
+  <!-- <script>
+    window.onload = () => {
+      const el = document.getElementById('test');
+      el.addEventListener("touchend", handleEnd, false);
+      el.addEventListener("touchmove", handleMove, false);
+      el.addEventListener("touchstart", handleStart, false);
+      el.addEventListener("touchcancel", handleCancel, false);
+      el.style.position = "absolute";
+      el.style.zIndex = -1;
+      // el.style.height = "25%";
+      // el.style.width = "25%";
+      el.style.fontSize = '35px';
+      el.style.color = "#fff";
+      el.style.bottom = "120px";
+
+      window.onclick = touchTap;
+
+      function touchTap(evt) {
+        const screen      = window.screen;
+        const innerWidth  = window.innerWidth;
+        const innerHeight = window.innerHeight;
+        const orientation = window.screen.orientation.type;
+        // evt.preventDefault();
+
+        if (console) {
+          console.log(innerWidth, innerHeight, orientation, screen);
+        }
+        el.innerHTML = `
+          innerWidth: ${innerWidth}
+          <br />
+          innerHeight: ${innerHeight}
+          <br />
+          orientation: ${orientation}
+          <br />
+        `;
+      }
+
+      function handleEnd(evt) {
+        evt.preventDefault();
+        log('touchend');
+      }
+
+      function handleStart(evt) {
+        evt.preventDefault();
+        log('touchstart.');
+        touchTap(evt);
+      }
+
+      function handleMove(evt) {
+        evt.preventDefault();
+      }
+
+      function handleCancel(evt) {
+        evt.preventDefault();
+        log('touchcancel.');
+      }
+
+      function log(msg) {
+        if (console) {
+          console.log(msg);
+        }
+      }
+
+    }
+  </script> -->
+
 </html>
