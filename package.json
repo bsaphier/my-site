@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack -w & nodemon --watch server -e js,html server/start.js",
     "server": "node server/start.js",
-    "build": "webpack -p",
+    "build": "webpack --optimize-minize --define process.env.NODE_ENV=\"'production'\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Benjamin Saphier",
